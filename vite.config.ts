@@ -1,4 +1,6 @@
 import { defineConfig } from 'vite';
+import fs from 'node:fs';
+import path from 'node:path';
 
 export default defineConfig({
   base: './',
@@ -13,6 +15,13 @@ export default defineConfig({
   },
   preview: { port: 4173 },
   plugins: [{
+    name: 'bundle-python-runtime',
+    generateBundle() {
+      for (const name of ['pyodide.mjs', 'pyodide.asm.mjs', 'pyodide.asm.wasm', 'python_stdlib.zip', 'pyodide-lock.json']) {
+        this.emitFile({ type: 'asset', fileName: 'python/' + name, source: fs.readFileSync(path.resolve('node_modules/pyodide', name)) });
+      }
+    },
+  }, {
     name: 'vscode-css',
     enforce: 'pre',
     async resolveId(source, importer, options) {

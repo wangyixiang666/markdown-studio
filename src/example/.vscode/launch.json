@@ -1,0 +1,12 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "python-browser",
+      "request": "launch",
+      "name": "Python：当前文件",
+      "program": "${file}",
+      "stopOnEntry": true
+    }
+  ]
+}

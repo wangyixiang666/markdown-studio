@@ -4,7 +4,3 @@
 .monaco-workbench .titlebar .action-item:has(.codicon-chat-sparkle) {
   display: none !important;
 }
-.monaco-workbench .menubar-menu-button:has([aria-label="运行"]),
-.monaco-workbench .menubar-menu-button:has([aria-label="终端"]) {
-  display: none !important;
-}

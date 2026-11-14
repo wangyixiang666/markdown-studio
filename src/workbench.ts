@@ -27,6 +27,7 @@ import getQuickaccessServiceOverride from '@codingame/monaco-vscode-quickaccess-
 import getMarkersServiceOverride from '@codingame/monaco-vscode-markers-service-override';
 import getAccessibilityServiceOverride from '@codingame/monaco-vscode-accessibility-service-override';
 import getBulkEditServiceOverride from '@codingame/monaco-vscode-bulk-edit-service-override';
+import getDebugServiceOverride from '@codingame/monaco-vscode-debug-service-override';
 import editorWorkerUrl from 'monaco-editor/esm/vs/editor/editor.worker.js?worker&url';
 import extensionWorkerUrl from '@codingame/monaco-vscode-api/workers/extensionHost.worker?worker&url';
 import textmateWorkerUrl from '@codingame/monaco-vscode-textmate-service-override/worker?worker&url';
@@ -38,6 +39,7 @@ import '@codingame/monaco-vscode-mermaid-markdown-features-default-extension';
 import '@codingame/monaco-vscode-theme-defaults-default-extension';
 import '@codingame/monaco-vscode-theme-seti-default-extension';
 import { installFileCommands } from './file-commands';
+import { installDebugger } from './debug/adapter';
 import './style.css';
 
 const workerUrls: Record<string, string> = {
@@ -57,11 +59,14 @@ const filesystem = new IndexedDBFileSystemProvider('file', database, 'files', tr
 registerFileSystemOverlay(10, filesystem);
 const root = URI.file('/Markdown');
 const welcome = URI.joinPath(root, 'Markdown 语法大全.md');
-const examples = import.meta.glob<string>('./example/**/*', { query: '?raw', import: 'default', eager: true });
+const examples = import.meta.glob<string>('./example/**/*', { query: '?raw', import: 'default', eager: true, exhaustive: true });
 const marker = URI.file('/.markdown-studio-seeded');
+const debugMarker = URI.file('/.markdown-studio-debug-seeded-v1');
 let firstVisit = false;
+let needsDebugExamples = false;
 try { await filesystem.stat(marker); } catch { firstVisit = true; }
-if (firstVisit) {
+try { await filesystem.stat(debugMarker); } catch { needsDebugExamples = true; }
+if (firstVisit || needsDebugExamples) {
   await filesystem.mkdir(root);
   for (const [path, text] of Object.entries(examples)) {
     const relative = path.replace('./example/', '');
@@ -72,6 +77,7 @@ if (firstVisit) {
     await initFile(URI.joinPath(root, relative), text);
   }
   await initFile(marker, '1');
+  await initFile(debugMarker, '1');
 }
 
 await initUserConfiguration(JSON.stringify({
@@ -109,6 +115,10 @@ await initUserConfiguration(JSON.stringify({
   'chat.disableAIFeatures': true,
   'telemetry.telemetryLevel': 'off',
   'outline.showVariables': false,
+  'debug.openDebug': 'openOnSessionStart',
+  'debug.internalConsoleOptions': 'openOnSessionStart',
+  'debug.console.fontSize': 14,
+  'workbench.editorAssociations': { '*.svg': 'markdownLab.imagePreview', '*.png': 'markdownLab.imagePreview', '*.jpg': 'markdownLab.imagePreview', '*.jpeg': 'markdownLab.imagePreview', '*.webp': 'markdownLab.imagePreview', '*.gif': 'markdownLab.imagePreview' },
 }));
 await initUserKeybindings(JSON.stringify([
   { key: 'ctrl+n', mac: 'cmd+n', command: 'markdownLab.newFile' },
@@ -120,6 +130,17 @@ const localExtension = registerExtension({
   name: 'markdown-studio', publisher: 'markdown-lab', version: '1.0.0',
   engines: { vscode: '*' },
   contributes: {
+    breakpoints: [{ language: 'python' }],
+    debuggers: [{
+      type: 'python-browser', label: 'Python（浏览器）', languages: ['python'],
+      configurationAttributes: {
+        launch: { required: ['program'], properties: {
+          program: { type: 'string', description: '要运行的 Python 文件', default: '${file}' },
+          stopOnEntry: { type: 'boolean', description: '在第一行暂停', default: true },
+        } },
+      },
+      initialConfigurations: [{ type: 'python-browser', request: 'launch', name: 'Python：当前文件', program: '${file}', stopOnEntry: true }],
+    }],
     customEditors: [{
       viewType: 'markdownLab.imagePreview', displayName: '图片预览', priority: 'default',
       selector: [{ filenamePattern: '*.{svg,png,jpg,jpeg,gif,webp,avif,bmp,ico}' }],
@@ -131,10 +152,13 @@ const localExtension = registerExtension({
       { command: 'markdownLab.downloadFile', title: '下载当前文件', icon: '$(cloud-download)' },
       { command: 'markdownLab.downloadWorkspace', title: '下载整个练习目录（ZIP）', icon: '$(desktop-download)' },
       { command: 'markdownLab.openExample', title: 'Markdown: 打开语法大全', icon: '$(book)' },
+      { command: 'markdownLab.debugCurrent', title: 'Python: 调试当前文件', icon: '$(debug-start)' },
+      { command: 'markdownLab.openDebugLesson', title: '调试: 打开新生练习', icon: '$(beaker)' },
     ],
     menus: {
       'editor/title': [
         { command: 'markdownLab.downloadFile', when: "resourceScheme == file", group: 'navigation@20' },
+        { command: 'markdownLab.debugCurrent', when: "resourceExtname == .py", group: 'navigation@1' },
       ],
       'view/title': [
         { command: 'markdownLab.importFiles', when: "view == workbench.explorer.fileView", group: 'navigation@20' },
@@ -160,7 +184,7 @@ await initialize({
   ...getSearchServiceOverride(), ...getExplorerServiceOverride(),
   ...getQuickaccessServiceOverride({ shouldUseGlobalPicker: () => true, isKeybindingConfigurationVisible: () => true }),
   ...getMarkersServiceOverride(), ...getAccessibilityServiceOverride(),
-  ...getBulkEditServiceOverride(), ...getTitleBarServiceOverride(),
+  ...getBulkEditServiceOverride(), ...getDebugServiceOverride(), ...getTitleBarServiceOverride(),
   ...getWorkbenchServiceOverride(undefined, location.origin + '/'),
 }, document.getElementById('workbench')!, {
   workspaceProvider: { workspace: { folderUri: root }, trusted: true, open: async () => false },
@@ -173,6 +197,7 @@ await initialize({
 await localExtension.setAsDefaultApi();
 const api = await localExtension.getApi();
 installFileCommands(api, root, welcome);
+installDebugger(api, root);
 const editorService = await getService(IEditorService);
 if (!editorService.activeEditor) await api.window.showTextDocument(welcome);
 if (firstVisit) {
