@@ -51,7 +51,7 @@
     - 程序设计
 - 周二
     1. 预习
-    2. 复习</code></pre></div><div class="result"><div class="result-label">预览效果</div><div class="rendered"><ul><li>周一<ul><li>高等数学</li><li>程序设计</li></ul></li><li>周二<ol><li>预习</li><li>复习</li></ol></li></ul></div></div></div><p>这里的四个空格适用于这个示例。如果父项编号很长，子项还需要缩进到父项正文开始的位置之后。</p></article><article id="list-paragraph"><h3>同一项里再写一段</h3><p>先空一行，再缩进到该项正文开始的位置。下面 <code>1. </code> 占三个字符，所以续写的段落前面留三个空格。</p><div class="comparison"><div class="example"><div class="example-bar"><span>写法</span><button class="copy" type="button">复制示例</button></div><pre><code>1. 观察现象
+    2. 复习</code></pre></div><div class="result"><div class="result-label">预览效果</div><div class="rendered"><ul><li>周一<ul><li>高等数学</li><li>程序设计</li></ul></li><li>周二<ol><li>预习</li><li>复习</li></ol></li></ul></div></div></div><p>这里的四个空格适用于这个示例。如果父项编号很长，子项还需要缩进到父项正文开始的位置之后。</p></article><article id="list-paragraph"><h3>同一项里再写一段</h3><p>先空一行，再把新段落缩进到该项正文开始的位置。通常在列表标记后留一个空格：<code>- </code> 占 2 个字符，续段前留 2 个空格；<code>1. </code> 占 3 个，留 3 个空格；<code>10. </code> 占 4 个，留 4 个空格。嵌套列表还要加上父层已有的缩进。下面用 <code>1. </code> 演示，所以续段前是 3 个空格。</p><div class="comparison"><div class="example"><div class="example-bar"><span>写法</span><button class="copy" type="button">复制示例</button></div><pre><code>1. 观察现象
 
    先记录实际结果。
 
@@ -117,13 +117,14 @@ flowchart TD
 <article><h3>只下载这份笔记</h3><ol><li>在编辑区打开要保存的 <code>.md</code> 文件。</li><li>点“文件 → 下载当前文件”。</li><li>到浏览器的下载记录或电脑的“下载”文件夹中找到它。</li></ol><p>下载到的是 Markdown 源文件。以后可以用 VS Code 打开，继续修改。</p></article>
 <article><h3>把图片一起带走</h3><p>如果笔记用了本地图片，点“文件 → 下载整个练习目录（ZIP）”。解压后保留 <code>.md</code> 文件和图片文件夹的位置，图片路径才能继续使用。</p><p>只下载 <code>.md</code> 文件不会把图片装进去。换电脑后图片打不开，先检查图片文件是否也带过去了。</p></article>
 <article><h3>继续编辑电脑上的文件</h3><p>点“文件 → 导入本地文件…”，选择 <code>.md</code> 文件。如果有配套图片，用“导入本地文件夹…”一起导入。</p></article></section>
-<section id="exercise"><h2>课堂任务：我的大学第一周</h2><p class="intro">新建 <code>我的大学第一周.md</code>，完成下面六项。做好一项，可以勾选一项。</p>
+<section id="exercise"><h2>课堂任务：我的大学第一周</h2><p class="intro">新建 <code>我的大学第一周.md</code>，完成下面七项。做好一项，可以勾选一项。</p>
 <div class="checklist">
 <div class="task"><label><input type="checkbox" data-task="0"><span><strong>写标题</strong>用一级标题写“我的大学第一周”，再用二级标题写“本周课程”和“学习记录”。</span></label><a href="#headings">查看写法</a></div>
 <div class="task"><label><input type="checkbox" data-task="1"><span><strong>写列表</strong>列出至少三门课程，把其中一门的名字加粗。</span></label><a href="#lists">查看写法</a></div>
 <div class="task"><label><input type="checkbox" data-task="2"><span><strong>插入图片</strong>插入练习目录 assets 里的“山间日出.svg”。预览中要能看到图片。</span></label><a href="#paths">查看写法</a></div>
 <div class="task"><label><input type="checkbox" data-task="3"><span><strong>写公式</strong>写一个行内公式，例如 x 的平方；或写一个独立公式。</span></label><a href="#math">查看写法</a></div>
 <div class="task"><label><input type="checkbox" data-task="4"><span><strong>放一段代码</strong>插入 python 代码块，写两行 Python 代码。代码在预览中要单独成块。</span></label><a href="#code">查看写法</a></div>
+<div class="task"><label><input type="checkbox" data-task="6"><span><strong>添加表格</strong>至少三列、三行数据，不算表头。可以记录课程、星期和学分。</span></label><a href="#table">查看写法</a></div>
 <div class="task"><label><input type="checkbox" data-task="5"><span><strong>保存到电脑</strong>检查预览。点“文件 → 下载整个练习目录（ZIP）”，把文字和图片一起下载。</span></label><a href="#save">查看方法</a></div>
 </div>
 <details class="answer"><summary>查看一份完整示例</summary><div class="example"><div class="example-bar"><span>写法</span><button class="copy" type="button">复制示例</button></div><pre><code># 我的大学第一周
@@ -136,6 +137,12 @@ flowchart TD
 
 ## 学习记录
 
+| 课程 | 星期 | 学分 |
+| :--- | :---: | ---: |
+| 高等数学 | 周一 | 5 |
+| 程序设计 | 周三 | 4 |
+| 大学英语 | 周五 | 2 |
+
 今天学会了写 Markdown。
 
 ![山间日出](./assets/山间日出.svg)
@@ -147,30 +154,55 @@ name = "南大"
 print("你好，" + name)
 ```</code></pre></div><p>这个图片路径适用于直接建在练习目录中的笔记。如果把笔记放进子文件夹，需要相应调整路径。</p></details>
 <a class="practice" href="../" target="_blank" rel="noopener">去练习网页完成任务 ↗</a></section>
-<section id="debug"><h2>代码调试</h2><p class="intro">调试时，可以让程序停在指定行，查看变量，再让它一行一行往下执行。这样就能看到结果是从哪一步开始不对的。</p>
-<article><h3>先认识三个操作</h3><dl class="definitions"><div><dt>断点</dt><dd>告诉程序在哪里暂停。点击代码行左侧、行号旁边的空白处，会出现一个红点；再点一次就取消。</dd></div><div><dt>变量</dt><dd>程序当前保存的值。暂停后看左侧“变量”，就能知道 <code>i</code>、<code>total</code> 等变量现在是多少。</dd></div><div><dt>单步</dt><dd>只往下执行一步。按 <kbd>F10</kbd> 后，黄色位置会移动，变量也可能改变。</dd></div></dl><p>黄色行表示<strong>下一步要执行的代码</strong>。如果黄色行是 <code>total = total + i</code>，这一行的加法还没有执行。</p></article>
-<article><h3>例一：少加了哪个数</h3><p>打开左侧 <code>debug</code> 文件夹里的 <code>01_循环边界.py</code>。它要计算 1 + 2 + 3 + 4 + 5，正确结果是 15，但原程序算出的是 10。</p>
-<div class="example"><div class="example-bar"><span>写法</span><button class="copy" type="button">复制示例</button></div><pre><code>def sum_to(n):
-    total = 0
-    for i in range(1, n):
-        total = total + i
-    return total</code></pre></div>
-<ol><li>在 <code>total = total + i</code> 左边设断点。</li><li>按 <kbd>F5</kbd> 启动。第一次需要加载 Python，等程序停在红点所在行。</li><li>展开左侧“变量”，找到 <code>n</code>、<code>i</code>、<code>total</code>。第一次停下时，它们分别是 5、1、0。</li><li>按一次 <kbd>F10</kbd>，加法执行完，<code>total</code> 变成 1。</li><li>继续单步，观察 <code>i</code> 有没有取到 5，以及 <code>total</code> 最后是多少。</li></ol>
+<section id="debug"><h2>断点调试：从暂停到找到原因</h2>
+<p class="intro">下面两个例子都能在<a href="../" target="_blank" rel="noopener">练习网页</a>中直接运行。先打开左侧 <code>debug</code> 文件夹，再选择对应的 Python 文件。第一次启动会加载 Python，请等状态栏显示“Python 已就绪”。</p>
+<div class="lesson-links"><a href="#debug-breakpoint">设置断点</a><a href="#debug-toolbar">找到调试按钮</a><a href="#debug-loop">循环边界</a><a href="#debug-function">函数参数</a><a href="#debug-stack">调用堆栈</a><a href="#debug-fix">修改与验证</a></div>
+<article id="debug-breakpoint"><h3>1. 断点让程序停在你关心的地方</h3>
+<p>断点是给程序设置的暂停位置。程序运行到这一行时，会在<strong>执行这一行之前</strong>停下来，方便我们查看变量、逐步执行。</p>
+<ol class="steps"><li><h4>打开 <code>01_循环边界.py</code></h4><p>找到第 7 行 <code>total = total + i</code>。</p></li>
+<li><h4>单击行号左侧的空白处</h4><p>出现红点，表示断点已经设好。再点一次可以取消。也可以先把光标放到这一行，再按 <kbd>F9</kbd>。</p></li>
+<li><h4>按 F5 启动，再按 F5 继续到断点</h4><p>本网页默认会先停在第一条可执行语句。此时再按一次 <kbd>F5</kbd>，才会运行到刚设的断点。黄色高亮行是<strong>下一条要执行的代码</strong>，不是已经执行完的代码。</p></li></ol>
+<figure class="debug-figure"><img src="debug-overview.png" alt="练习网页中的断点、黄色执行行、左侧变量面板与顶部调试工具栏" loading="lazy"><figcaption>红点标出断点；黄色行表示暂停位置；左侧“变量”显示当前的 n、i 和 total。</figcaption></figure>
+<p><code>n = 5</code> 是这次调用传入的参数值：主程序把 <code>number = 5</code> 传给 <code>sum_to(number)</code>，因此函数内的 <code>n</code> 等于 5。编辑器若在代码右侧显示灰底的 <code>n = 5</code>，那是调试器的提示，不需要输入到源码里。</p></article>
+<article id="debug-toolbar"><h3>2. 调试按钮在编辑区上方</h3>
+<p>启动调试后，上方会出现一条浮动工具栏。将鼠标停在图标上可以看到操作名称。下面列出本练习网页的快捷键。</p>
+<figure class="debug-figure toolbar-figure"><img src="debug-toolbar.png" alt="调试工具栏，从左到右依次是继续、单步跳过、单步进入、单步跳出、重新开始、停止" loading="lazy"></figure>
+<dl class="keys"><div><dt>F5 · 继续</dt><dd>继续运行，直到遇到下一个断点、异常或程序结束。</dd></div>
+<div><dt>F10 · 单步跳过</dt><dd>执行当前语句。遇到函数调用时，把整个函数作为一步执行，然后停在下一条语句。</dd></div>
+<div><dt>Alt + F11 · 进入</dt><dd>进入自己写的函数，观察函数内部的执行。网页用 Alt + F11，避免 F11 被浏览器用作全屏；桌面 VSCode 通常用 F11。</dd></div>
+<div><dt>Shift + F11 · 跳出</dt><dd>执行完当前函数，回到调用它的位置。它不会修改代码，也不会自动修复错误。</dd></div>
+<div><dt>Shift + F5 · 停止</dt><dd>结束本次运行。改完代码后重新按 F5，让新代码从头执行。</dd></div></dl>
+<p>如果笔记本把 F5、F10 用作亮度或音量键，试着同时按住 <kbd>Fn</kbd>，或者直接点击工具栏里的同名按钮。</p></article>
+<article id="debug-loop"><h3>3. 循环边界：为什么少加了 5？</h3>
+<p>这个函数要计算 1 + 2 + 3 + 4 + 5，预期是 15，原程序却得到 10。断点停在加法这一行时，先看左侧“变量”：<code>n = 5</code>、<code>i = 1</code>、<code>total = 0</code>。</p>
+<ol><li>按一次 <kbd>F10</kbd>，执行 <code>total = total + i</code>。此时 total 从 0 变成 1。</li><li>继续按 F10。程序在循环头和加法之间往返，i 依次取 2、3、4。</li><li>到 <code>return total</code> 时，i 最后停在 4，total 为 10。全过程没有一次 i 等于 5。</li></ol>
+<figure class="debug-figure"><img src="loop-step.png" alt="VSCode 实际单步执行前后的代码：total 从 0 变成 1" loading="lazy"><figcaption>桌面 VSCode 中的实际单步执行：上图加法尚未执行，下图执行后 total 变为 1。</figcaption></figure>
 <div class="trace" data-trace="sum"><h4>逐步查看执行记录</h4><p>下面记录了这段函数的实际执行过程。点“下一步”看变量变化；要亲自设断点，在练习网页里操作。</p><div class="trace-variants" role="group" aria-label="选择程序"><button type="button" data-variant="original" aria-pressed="true">原程序</button><button type="button" data-variant="fixed" aria-pressed="false">修改后</button></div><div class="trace-body"><pre class="trace-code" aria-label="当前执行位置"></pre><dl class="trace-values"></dl></div><p class="trace-caption" aria-live="polite">正在读取执行记录……</p><div class="trace-controls"><button type="button" data-trace-prev>上一步</button><button type="button" data-trace-next>下一步</button><button type="button" data-trace-reset>重新开始</button><span class="trace-count"></span></div></div>
-<details class="answer"><summary>查看原因和修改方法</summary><p><code>range(1, n)</code> 包含 1，不包含 n。n 等于 5 时，i 只会取到 1、2、3、4。</p><div class="example"><div class="example-bar"><span>写法</span><button class="copy" type="button">复制示例</button></div><pre><code>for i in range(1, n + 1):
-    total = total + i</code></pre></div><p>先按 <kbd>Shift</kbd> + <kbd>F5</kbd> 停止，再改代码、重新按 <kbd>F5</kbd>。调试控制台应显示“计算结果：15”，并且不再出现末尾的断言报错。</p><p>还可以把 <code>number</code> 改成 1，检查结果是否为 1；改成 6，检查结果是否为 21。文件末尾的“期望结果”和断言中的数值也要一起改。</p></details></article>
-<article><h3>例二：两个参数传反了</h3><p>打开 <code>debug/03_函数参数.py</code>。买 3 本单价 12 元的书，再减 5 元优惠券，应付 31 元，原程序却算出 -31。</p><div class="example"><div class="example-bar"><span>写法</span><button class="copy" type="button">复制示例</button></div><pre><code>def pay_after_coupon(total, coupon):
-    payment = total - coupon
-    return payment
-
-def checkout(price, count, coupon):
-    subtotal = price * count
-    result = pay_after_coupon(coupon, subtotal)
-    return result</code></pre></div>
-<ol><li>在 <code>result = pay_after_coupon(coupon, subtotal)</code> 这一行设断点，按 <kbd>F5</kbd>。</li><li>暂停后，确认 <code>subtotal</code> 是 36，<code>coupon</code> 是 5。</li><li>按 <kbd>Alt</kbd> + <kbd>F11</kbd> 进入 <code>pay_after_coupon</code>。网页使用这个组合键，以免单独按 F11 让浏览器进入全屏。</li><li>在函数里面看参数：<code>total</code> 变成了 5，<code>coupon</code> 变成了 36。参数按位置传入，所以减法变成了 5 − 36。</li></ol>
-<details class="answer"><summary>查看修改方法</summary><div class="example"><div class="example-bar"><span>写法</span><button class="copy" type="button">复制示例</button></div><pre><code>result = pay_after_coupon(subtotal, coupon)</code></pre></div><p>把总价放前面、优惠券金额放后面。停止调试后修改，再重新运行，结果应为 31。</p></details></article>
-<article><h3>调试时常用的按键</h3><dl class="keys"><div><dt>F5</dt><dd>启动调试；暂停后继续运行到下一个断点。</dd></div><div><dt>F10</dt><dd>执行当前行。遇到函数调用时，执行完整个函数再停下。</dd></div><div><dt>Alt + F11</dt><dd>网页中的单步进入。遇到函数调用时，进入函数里面。</dd></div><div><dt>Shift + F11</dt><dd>执行完当前函数，回到调用它的位置。</dd></div><div><dt>Shift + F5</dt><dd>停止本次调试。改完代码后，重新按 F5 启动。</dd></div></dl><p>有些笔记本需要同时按住 <kbd>Fn</kbd>。也可以把鼠标放到调试工具栏图标上，看到名称后点击对应按钮。</p></article>
+<details class="answer"><summary>原因与修改</summary><p><code>range(1, n)</code> 包含起点 1，不包含终点 n。因此需要把终点改成 <code>n + 1</code>。</p><div class="example"><div class="example-bar"><span>写法</span><button class="copy" type="button">复制示例</button></div><pre><code>for i in range(1, n + 1):
+    total = total + i</code></pre></div><p>先停止调试，再修改、重新运行。原来的输入仍用 <code>number = 5</code>，控制台应输出“计算结果：15”。</p></details></article>
+<article id="debug-function"><h3>4. 函数参数：优惠券为什么反而减出了负数？</h3>
+<p>打开 <code>03_函数参数.py</code>。买 3 本书，每本 12 元，使用 5 元优惠券，应付 <strong>12 × 3 − 5 = 31 元</strong>。</p>
+<ol class="steps"><li><h4>在调用处暂停</h4><p>给第 11 行 <code>result = pay_after_coupon(coupon, subtotal)</code> 设置断点。按 F5 启动，再按 F5 运行到断点。此时 <code>subtotal = 36</code>、<code>coupon = 5</code>。</p></li>
+<li><h4>单步进入函数</h4><p>按 <kbd>Alt</kbd> + <kbd>F11</kbd>。进入 <code>pay_after_coupon(total, coupon)</code> 后，左侧变量变成 <code>total = 5</code>、<code>coupon = 36</code>。参数按位置对应：第一个值给 total，第二个值给 coupon。</p></li>
+<li><h4>执行减法，观察返回值</h4><p>按 F10 执行 <code>payment = total - coupon</code>，得到 <code>payment = -31</code>。函数本身按“总价 − 优惠金额”计算，错误来自调用时把两个参数放反了。</p></li></ol>
+<figure class="debug-figure"><img src="function-values.png" alt="VSCode 暂停在函数内部，total 为 5、coupon 为 36，执行减法后 payment 为 -31" loading="lazy"><figcaption>实际暂停画面：5 − 36 = −31。先检查传入的值，再决定改哪一行。</figcaption></figure></article>
+<article id="debug-stack"><h3>5. 调用堆栈：这个函数是谁调用的？</h3>
+<p>左侧“调用堆栈”记录当前还没有执行完的调用。<strong>最上面是当前函数，往下是调用它的上一层</strong>。点击某一层，可以查看那一层的源码和局部变量；查看其他层不会让程序倒着执行。</p>
+<figure class="debug-figure stack-figure"><img src="function-stack.png" alt="调用堆栈从上到下是 pay_after_coupon、checkout 和 module" loading="lazy"></figure>
+<ol><li><code>pay_after_coupon</code>：当前正在计算实付金额的函数。</li><li><code>checkout</code>：上一层调用者，在第 11 行调用了 pay_after_coupon。</li><li><code>&lt;module&gt;</code>：最外层主程序，在第 15 行调用 checkout(12, 3, 5)。</li></ol>
+<p>按 <kbd>Shift</kbd> + <kbd>F11</kbd> 会执行完当前函数并返回调用处，便于继续观察。这个动作只是控制执行过程；要修正参数，仍然需要停止后编辑源码。</p></article>
+<article id="debug-fix"><h3>6. 停止、修改，再用原输入验证</h3>
+<p>按 <kbd>Shift</kbd> + <kbd>F5</kbd> 停止。打开 <code>checkout</code> 中的调用，把总价 subtotal 放前面，优惠金额 coupon 放后面。</p>
+<div class="comparison"><div class="example"><div class="example-bar">修改前</div><pre><code>pay_after_coupon(coupon, subtotal)
+                 ↓        ↓
+              total=5  coupon=36</code></pre></div><div class="example"><div class="example-bar">修改后</div><pre><code>pay_after_coupon(subtotal, coupon)
+                 ↓        ↓
+              total=36  coupon=5</code></pre></div></div>
+<div class="example"><div class="example-bar"><span>写法</span><button class="copy" type="button">复制示例</button></div><pre><code>result = pay_after_coupon(subtotal, coupon)</code></pre></div>
+<p>重新按 F5 启动，保持原来的输入 <code>checkout(12, 3, 5)</code>。继续运行后，调试控制台应输出“应付金额：31”，最后的 assert 检查也应通过。只有重新启动，才会执行修改后的代码。</p></article>
+<article><h3>还可以继续探索什么？</h3><p>这节课只介绍了调试的冰山一角。熟悉暂停、观察和单步之后，还可以尝试：</p><ul><li><strong>条件断点</strong>：右键红点，编辑条件，例如 <code>i == 4</code>，只在指定一轮暂停。</li><li><strong>监视表达式</strong>：在左侧“监视”里点 +，输入 <code>n - i</code>，每次暂停时查看还差多少。</li><li><strong>异常断点</strong>：打开 <code>05_越界异常.py</code>，让调试器在访问越界的位置暂停，检查索引和列表长度。</li></ul></article>
 </section>
+
 <section id="problems"><h2>常见问题</h2>
 <details><summary>写了 #，为什么没有变成标题？</summary><p>确认使用英文 <code>#</code>，它在行首，后面有空格。然后看右侧预览；左侧编辑区本来就会保留这些符号。</p></details>
 <details><summary>整个后半篇都变成了代码，怎么办？</summary><p>往前找最近一处代码块，检查有没有在结束位置另起一行，写上三个反引号。开始和结束要配对。</p></details>

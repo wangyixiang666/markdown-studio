@@ -6,6 +6,12 @@
 
 直接运行 VS Code 的工作台、编辑器和内置 Markdown Web 扩展，通过 CodinGame 的 `monaco-vscode-api` 在静态网站中集成。不是重新实现一套相似的 Markdown 解析器。
 
+## 课堂学习
+
+- [Markdown 与断点调试图文教程](https://wangyixiang666.github.io/markdown-studio/tutorial/)
+- [课堂任务与检查清单](https://wangyixiang666.github.io/markdown-studio/tutorial/#exercise)
+- [GitHub 任务列表的显示效果](docs/任务列表示例.md)
+
 ## 功能
 
 - VS Code 中文界面、原生主题、资源管理器、标签页、拆分编辑器、大纲与命令面板。

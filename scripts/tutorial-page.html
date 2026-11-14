@@ -24,13 +24,14 @@
 <article><h3>只下载这份笔记</h3><ol><li>在编辑区打开要保存的 <code>.md</code> 文件。</li><li>点“文件 → 下载当前文件”。</li><li>到浏览器的下载记录或电脑的“下载”文件夹中找到它。</li></ol><p>下载到的是 Markdown 源文件。以后可以用 VS Code 打开，继续修改。</p></article>
 <article><h3>把图片一起带走</h3><p>如果笔记用了本地图片，点“文件 → 下载整个练习目录（ZIP）”。解压后保留 <code>.md</code> 文件和图片文件夹的位置，图片路径才能继续使用。</p><p>只下载 <code>.md</code> 文件不会把图片装进去。换电脑后图片打不开，先检查图片文件是否也带过去了。</p></article>
 <article><h3>继续编辑电脑上的文件</h3><p>点“文件 → 导入本地文件…”，选择 <code>.md</code> 文件。如果有配套图片，用“导入本地文件夹…”一起导入。</p></article></section>
-<section id="exercise"><h2>课堂任务：我的大学第一周</h2><p class="intro">新建 <code>我的大学第一周.md</code>，完成下面六项。做好一项，可以勾选一项。</p>
+<section id="exercise"><h2>课堂任务：我的大学第一周</h2><p class="intro">新建 <code>我的大学第一周.md</code>，完成下面七项。做好一项，可以勾选一项。</p>
 <div class="checklist">
 <div class="task"><label><input type="checkbox" data-task="0"><span><strong>写标题</strong>用一级标题写“我的大学第一周”，再用二级标题写“本周课程”和“学习记录”。</span></label><a href="#headings">查看写法</a></div>
 <div class="task"><label><input type="checkbox" data-task="1"><span><strong>写列表</strong>列出至少三门课程，把其中一门的名字加粗。</span></label><a href="#lists">查看写法</a></div>
 <div class="task"><label><input type="checkbox" data-task="2"><span><strong>插入图片</strong>插入练习目录 assets 里的“山间日出.svg”。预览中要能看到图片。</span></label><a href="#paths">查看写法</a></div>
 <div class="task"><label><input type="checkbox" data-task="3"><span><strong>写公式</strong>写一个行内公式，例如 x 的平方；或写一个独立公式。</span></label><a href="#math">查看写法</a></div>
 <div class="task"><label><input type="checkbox" data-task="4"><span><strong>放一段代码</strong>插入 python 代码块，写两行 Python 代码。代码在预览中要单独成块。</span></label><a href="#code">查看写法</a></div>
+<div class="task"><label><input type="checkbox" data-task="6"><span><strong>添加表格</strong>至少三列、三行数据，不算表头。可以记录课程、星期和学分。</span></label><a href="#table">查看写法</a></div>
 <div class="task"><label><input type="checkbox" data-task="5"><span><strong>保存到电脑</strong>检查预览。点“文件 → 下载整个练习目录（ZIP）”，把文字和图片一起下载。</span></label><a href="#save">查看方法</a></div>
 </div>
 <details class="answer"><summary>查看一份完整示例</summary><pre data-copy><code># 我的大学第一周
@@ -43,6 +44,12 @@
 
 ## 学习记录
 
+| 课程 | 星期 | 学分 |
+| :--- | :---: | ---: |
+| 高等数学 | 周一 | 5 |
+| 程序设计 | 周三 | 4 |
+| 大学英语 | 周五 | 2 |
+
 今天学会了写 Markdown。
 
 ![山间日出](./assets/山间日出.svg)
@@ -54,30 +61,7 @@ name = "南大"
 print("你好，" + name)
 ```</code></pre><p>这个图片路径适用于直接建在练习目录中的笔记。如果把笔记放进子文件夹，需要相应调整路径。</p></details>
 <a class="practice" href="../" target="_blank" rel="noopener">去练习网页完成任务 ↗</a></section>
-<section id="debug"><h2>代码调试</h2><p class="intro">调试时，可以让程序停在指定行，查看变量，再让它一行一行往下执行。这样就能看到结果是从哪一步开始不对的。</p>
-<article><h3>先认识三个操作</h3><dl class="definitions"><div><dt>断点</dt><dd>告诉程序在哪里暂停。点击代码行左侧、行号旁边的空白处，会出现一个红点；再点一次就取消。</dd></div><div><dt>变量</dt><dd>程序当前保存的值。暂停后看左侧“变量”，就能知道 <code>i</code>、<code>total</code> 等变量现在是多少。</dd></div><div><dt>单步</dt><dd>只往下执行一步。按 <kbd>F10</kbd> 后，黄色位置会移动，变量也可能改变。</dd></div></dl><p>黄色行表示<strong>下一步要执行的代码</strong>。如果黄色行是 <code>total = total + i</code>，这一行的加法还没有执行。</p></article>
-<article><h3>例一：少加了哪个数</h3><p>打开左侧 <code>debug</code> 文件夹里的 <code>01_循环边界.py</code>。它要计算 1 + 2 + 3 + 4 + 5，正确结果是 15，但原程序算出的是 10。</p>
-<pre data-copy><code>def sum_to(n):
-    total = 0
-    for i in range(1, n):
-        total = total + i
-    return total</code></pre>
-<ol><li>在 <code>total = total + i</code> 左边设断点。</li><li>按 <kbd>F5</kbd> 启动。第一次需要加载 Python，等程序停在红点所在行。</li><li>展开左侧“变量”，找到 <code>n</code>、<code>i</code>、<code>total</code>。第一次停下时，它们分别是 5、1、0。</li><li>按一次 <kbd>F10</kbd>，加法执行完，<code>total</code> 变成 1。</li><li>继续单步，观察 <code>i</code> 有没有取到 5，以及 <code>total</code> 最后是多少。</li></ol>
-<div class="trace" data-trace="sum"><h4>逐步查看执行记录</h4><p>下面记录了这段函数的实际执行过程。点“下一步”看变量变化；要亲自设断点，在练习网页里操作。</p><div class="trace-variants" role="group" aria-label="选择程序"><button type="button" data-variant="original" aria-pressed="true">原程序</button><button type="button" data-variant="fixed" aria-pressed="false">修改后</button></div><div class="trace-body"><pre class="trace-code" aria-label="当前执行位置"></pre><dl class="trace-values"></dl></div><p class="trace-caption" aria-live="polite">正在读取执行记录……</p><div class="trace-controls"><button type="button" data-trace-prev>上一步</button><button type="button" data-trace-next>下一步</button><button type="button" data-trace-reset>重新开始</button><span class="trace-count"></span></div></div>
-<details class="answer"><summary>查看原因和修改方法</summary><p><code>range(1, n)</code> 包含 1，不包含 n。n 等于 5 时，i 只会取到 1、2、3、4。</p><pre data-copy><code>for i in range(1, n + 1):
-    total = total + i</code></pre><p>先按 <kbd>Shift</kbd> + <kbd>F5</kbd> 停止，再改代码、重新按 <kbd>F5</kbd>。调试控制台应显示“计算结果：15”，并且不再出现末尾的断言报错。</p><p>还可以把 <code>number</code> 改成 1，检查结果是否为 1；改成 6，检查结果是否为 21。文件末尾的“期望结果”和断言中的数值也要一起改。</p></details></article>
-<article><h3>例二：两个参数传反了</h3><p>打开 <code>debug/03_函数参数.py</code>。买 3 本单价 12 元的书，再减 5 元优惠券，应付 31 元，原程序却算出 -31。</p><pre data-copy><code>def pay_after_coupon(total, coupon):
-    payment = total - coupon
-    return payment
-
-def checkout(price, count, coupon):
-    subtotal = price * count
-    result = pay_after_coupon(coupon, subtotal)
-    return result</code></pre>
-<ol><li>在 <code>result = pay_after_coupon(coupon, subtotal)</code> 这一行设断点，按 <kbd>F5</kbd>。</li><li>暂停后，确认 <code>subtotal</code> 是 36，<code>coupon</code> 是 5。</li><li>按 <kbd>Alt</kbd> + <kbd>F11</kbd> 进入 <code>pay_after_coupon</code>。网页使用这个组合键，以免单独按 F11 让浏览器进入全屏。</li><li>在函数里面看参数：<code>total</code> 变成了 5，<code>coupon</code> 变成了 36。参数按位置传入，所以减法变成了 5 − 36。</li></ol>
-<details class="answer"><summary>查看修改方法</summary><pre data-copy><code>result = pay_after_coupon(subtotal, coupon)</code></pre><p>把总价放前面、优惠券金额放后面。停止调试后修改，再重新运行，结果应为 31。</p></details></article>
-<article><h3>调试时常用的按键</h3><dl class="keys"><div><dt>F5</dt><dd>启动调试；暂停后继续运行到下一个断点。</dd></div><div><dt>F10</dt><dd>执行当前行。遇到函数调用时，执行完整个函数再停下。</dd></div><div><dt>Alt + F11</dt><dd>网页中的单步进入。遇到函数调用时，进入函数里面。</dd></div><div><dt>Shift + F11</dt><dd>执行完当前函数，回到调用它的位置。</dd></div><div><dt>Shift + F5</dt><dd>停止本次调试。改完代码后，重新按 F5 启动。</dd></div></dl><p>有些笔记本需要同时按住 <kbd>Fn</kbd>。也可以把鼠标放到调试工具栏图标上，看到名称后点击对应按钮。</p></article>
-</section>
+<!-- DEBUG_TUTORIAL -->
 <section id="problems"><h2>常见问题</h2>
 <details><summary>写了 #，为什么没有变成标题？</summary><p>确认使用英文 <code>#</code>，它在行首，后面有空格。然后看右侧预览；左侧编辑区本来就会保留这些符号。</p></details>
 <details><summary>整个后半篇都变成了代码，怎么办？</summary><p>往前找最近一处代码块，检查有没有在结束位置另起一行，写上三个反引号。开始和结束要配对。</p></details>

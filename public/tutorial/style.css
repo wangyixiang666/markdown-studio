@@ -5,3 +5,5 @@
 @media(prefers-reduced-motion:reduce){:root{scroll-behavior:auto}}
 
 .file-tree{background:#f0eaf4;border-radius:7px;padding:15px 20px;margin:18px 0}.file-tree p{font-size:15px;color:#67596e;margin:0 0 8px}.file-tree pre{color:#44314e;padding:0;font-size:16px}
+
+.lesson-links{display:flex;flex-wrap:wrap;gap:12px;margin:24px 0}.lesson-links a{background:#eee5f3;padding:10px 14px;border-radius:5px;text-decoration:none}.debug-figure{margin:25px 0}.debug-figure img{display:block;width:100%;height:auto;border-radius:7px;border:1px solid #ddd2e5}.debug-figure figcaption{font-size:17px;line-height:1.8;margin-top:12px;color:#53475a}.toolbar-figure{max-width:640px}.stack-figure{max-width:580px}article[id]{scroll-margin-top:110px}#debug .keys>div{grid-template-columns:220px 1fr}@media(max-width:650px){#debug .keys>div{grid-template-columns:1fr;gap:5px}}
