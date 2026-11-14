@@ -8,6 +8,21 @@ async function start() {
       return;
     }
   }
+  // Upgrade the nested worker before opening any webviews. An older worker at
+  // this scope could otherwise serve an unisolated iframe before it can update.
+  if ('serviceWorker' in navigator) {
+    const webviewWorker = new URL('../node_modules/@codingame/monaco-vscode-view-common-service-override/service-override/viewCommon/vs/workbench/contrib/webview/browser/pre/service-worker.js', import.meta.url);
+    const registration = await navigator.serviceWorker.register(webviewWorker.href, { type: 'module' });
+    const worker = registration.installing ?? registration.waiting;
+    if (worker && worker.state !== 'activated') {
+      await new Promise<void>((resolve, reject) => {
+        worker.addEventListener('statechange', () => {
+          if (worker.state === 'activated') resolve();
+          if (worker.state === 'redundant') reject(new Error('预览组件加载失败，请刷新重试。'));
+        });
+      });
+    }
+  }
   await import('@codingame/monaco-vscode-language-pack-zh-hans');
   await import('./workbench');
 }
