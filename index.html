@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#181818" />
+    <meta name="description" content="在浏览器里使用 VS Code 的 Markdown 编辑器与预览。打开即用，无需安装。" />
+    <title>Markdown · VS Code 体验</title>
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+    <style>
+      html,body,#workbench { width:100%; height:100%; margin:0; overflow:hidden; background:#1f1f1f; }
+      #loading {position:fixed;inset:0;z-index:10000;display:grid;place-content:center;gap:20px;text-align:center;background:#1f1f1f;color:#ccc;font:13px "Segoe UI",sans-serif}
+      #loading svg {margin:auto;width:56px;height:44px;color:#75beff}
+      #loading .track {height:2px;width:180px;background:#333;overflow:hidden;margin:auto}
+      #loading .track::after {content:"";display:block;width:65px;height:100%;background:#0078d4;animation:load 1.4s infinite ease-in-out}
+      #loading button {background:#0078d4;border:0;color:white;padding:8px 18px;cursor:pointer}
+      @keyframes load {from{transform:translateX(-65px)}to{transform:translateX(180px)}}
+      @media(prefers-reduced-motion:reduce){#loading .track::after{animation:none;width:100%}}
+    </style>
+  </head>
+  <body>
+    <div id="workbench"></div>
+    <div id="loading" role="status" aria-live="polite">
+      <svg viewBox="0 0 80 56" fill="none" aria-hidden="true"><rect x="2" y="2" width="76" height="52" rx="5" stroke="currentColor" stroke-width="3"/><path d="M14 40V16l11 13 11-13v24M54 16v22m-9-9 9 10 9-10" stroke="currentColor" stroke-width="5" stroke-linejoin="round"/></svg>
+      <span id="loading-message">正在打开 Markdown 工作台</span>
+      <div class="track"></div>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

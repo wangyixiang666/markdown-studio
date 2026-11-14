@@ -1,0 +1,10 @@
+/* The workbench, controls, editor and preview keep their upstream VS Code CSS. */
+.monaco-workbench .activitybar .action-item:has(.codicon-accounts-view-bar-icon),
+.monaco-workbench .titlebar .action-item:has(.codicon-copilot),
+.monaco-workbench .titlebar .action-item:has(.codicon-chat-sparkle) {
+  display: none !important;
+}
+.monaco-workbench .menubar-menu-button:has([aria-label="运行"]),
+.monaco-workbench .menubar-menu-button:has([aria-label="终端"]) {
+  display: none !important;
+}

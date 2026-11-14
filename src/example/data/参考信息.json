@@ -1,0 +1,10 @@
+{
+  "name": "Markdown 练习目录",
+  "entry": "Markdown 语法大全.md",
+  "assets": ["assets/山间日出.svg", "assets/markdown.svg"],
+  "references": {
+    "markdown": "https://code.visualstudio.com/docs/languages/markdown",
+    "math": "https://katex.org/docs/supported.html",
+    "mermaid": "https://mermaid.js.org/intro/"
+  }
+}
