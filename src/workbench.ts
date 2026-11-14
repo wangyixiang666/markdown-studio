@@ -80,6 +80,10 @@ if (firstVisit || needsDebugExamples) {
   await initFile(debugMarker, '1');
 }
 
+const tutorialFile = URI.joinPath(root, '00_课堂教程.md');
+try { await filesystem.stat(tutorialFile); }
+catch { await initFile(tutorialFile, examples['./example/00_课堂教程.md']); }
+
 await initUserConfiguration(JSON.stringify({
   'workbench.colorTheme': 'Default Dark Modern',
   'workbench.iconTheme': 'vs-seti',
@@ -152,6 +156,7 @@ const localExtension = registerExtension({
       { command: 'markdownLab.downloadFile', title: '下载当前文件', icon: '$(cloud-download)' },
       { command: 'markdownLab.downloadWorkspace', title: '下载整个练习目录（ZIP）', icon: '$(desktop-download)' },
       { command: 'markdownLab.openExample', title: 'Markdown: 打开语法大全', icon: '$(book)' },
+      { command: 'markdownLab.openTutorial', title: 'Markdown: 打开课堂教程', icon: '$(book)' },
       { command: 'markdownLab.debugCurrent', title: 'Python: 调试当前文件', icon: '$(debug-start)' },
       { command: 'markdownLab.openDebugLesson', title: '调试: 打开新生练习', icon: '$(beaker)' },
     ],

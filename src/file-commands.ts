@@ -3,6 +3,12 @@ import { MenuId, MenuRegistry } from '@codingame/monaco-vscode-api/vscode/vs/pla
 import { zipSync } from 'fflate';
 
 export function installFileCommands(api: typeof VSCode, root: VSCode.Uri, welcome: VSCode.Uri) {
+  api.commands.registerCommand('markdownLab.openTutorial', () => api.env.openExternal(api.Uri.parse(new URL('tutorial/', window.location.href).href)));
+  const tutorial = api.window.createStatusBarItem(api.StatusBarAlignment.Left, 100);
+  tutorial.text = '$(book) 课堂教程';
+  tutorial.tooltip = '按主题查语法、复制示例、查看课堂任务';
+  tutorial.command = 'markdownLab.openTutorial';
+  tutorial.show();
   function register(id: string, handler: (...args: any[]) => any) {
     api.commands.registerCommand(id, async (...args: any[]) => {
       try { await handler(...args); }
