@@ -1,82 +1,182 @@
-<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>求真工作坊 · 课堂教程</title><link rel="stylesheet" href="style.css"></head><body><header><a class="brand" href="#">求真工作坊</a><a class="practice" href="../" target="_blank" rel="noopener">打开练习网页 ↗</a></header><div class="layout"><nav aria-label="教程目录"><a href="#start">从这里开始</a><a href="#headings">标题、强调与引用</a><a href="#breaks">回车、空行与换行</a><a href="#lists">列表与缩进</a><a href="#paths">链接、图片与相对路径</a><a href="#code">行内代码与代码块</a><a href="#table">表格</a><a href="#math">LaTeX 数学公式</a><a href="#mermaid">Mermaid 流程图</a><a href="#html">折叠、注释与转义</a><a href="#exercise">课堂任务</a><a href="#debug">代码调试</a></nav><main><section id="start" class="hero"><h1>忘记写法？<br>来这里查一查。</h1><p>Markdown 与代码调试课堂教程</p><div class="actions"><a href="#exercise">查看课堂任务 →</a><a href="#breaks">回车为什么没换行？</a></div></section><section id="headings"><h2>标题、强调与引用</h2><p class="intro">先把文章的层次写出来，再标出重点。</p><article><h3>标题</h3><div class="example"><pre><code># 一级标题
+<!doctype html>
+<html lang="zh-CN">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Markdown 与代码调试教程：新建文件、语法写法、预览效果、图片路径、保存文件，以及断点和单步调试。"><title>Markdown 与代码调试 · 求真工作坊</title><link rel="stylesheet" href="style.css"></head>
+<body>
+<a class="skip" href="#main">跳到正文</a>
+<header><a class="brand" href="#start">求真工作坊</a><a class="practice" href="../" target="_blank" rel="noopener">打开练习网页 ↗</a></header>
+<div class="layout">
+<aside><label class="search-label" for="topic-search">查找内容</label><input id="topic-search" type="search" placeholder="换行、图片、断点……" autocomplete="off"><nav aria-label="教程目录"><a href="#start">新建文件与预览</a><a href="#headings">标题、加粗与引用</a><a href="#breaks">回车、空行与换行</a><a href="#lists">列表与缩进</a><a href="#paths">链接、图片与路径</a><a href="#code">行内代码与代码块</a><a href="#table">表格</a><a href="#math">数学公式</a><a href="#mermaid">流程图</a><a href="#html">折叠、注释与转义</a><a href="#save">保存与下载</a><a href="#exercise">课堂任务</a><a href="#debug">代码调试</a><a href="#problems">常见问题</a></nav></aside>
+<main id="main">
+<p id="search-empty" role="status" hidden>没有找到相关内容。换一个词试试，例如“图片”或“换行”。</p>
+<section id="start" class="hero">
+<h1>Markdown 与代码调试</h1>
+<p class="intro">Markdown 是一种用简单符号给文字排版的格式。比如，行首加上 <code># </code>，这行文字就会变成标题。</p>
+<p>下面可以查写法、看效果，也可以复制示例到练习网页里试。第一次使用，先完成这四步。</p>
+<ol class="steps">
+<li><h3>打开练习网页</h3><p>点右上角“打开练习网页”。左边是文件列表，中间是编辑区；点击文件名，就能打开文件。</p></li>
+<li><h3>新建一份笔记</h3><p>点左上角“文件 → 新建 Markdown 文件”，输入 <code>我的大学第一周.md</code>，按回车。<code>.md</code> 是 Markdown 文件的后缀，要保留它。</p></li>
+<li><h3>输入第一行文字</h3><div class="example"><div class="example-bar"><span>写法</span><button class="copy" type="button">复制示例</button></div><pre><code># 我的大学第一周</code></pre></div><p><code>#</code> 用英文符号，后面按一次空格，再输入标题。</p></li>
+<li><h3>打开右侧预览</h3><p>点编辑区右上角的“打开侧边预览”按钮。也可以先按 <kbd>Ctrl</kbd> + <kbd>K</kbd>，松开后再按 <kbd>V</kbd>。左边显示写法，右边显示排版结果；修改文字后，预览会跟着更新。</p></li>
+</ol><p>预览中出现大标题，就可以继续往下写了。结束练习时，按<a href="#save">保存与下载</a>里的步骤把文件下载到电脑。</p>
+</section>
+<section id="headings"><h2>标题、加粗与引用</h2><p class="intro">标题用来区分章节，加粗用来标出重点。符号要用英文半角字符。</p><article id="heading-levels"><h3>标题</h3><p>在一行的开头写 <code>#</code>，留一个空格，再写标题。一个 <code>#</code> 是一级标题，两个是二级标题，最多写六个。</p><div class="comparison"><div class="example"><div class="example-bar"><span>写法</span><button class="copy" type="button">复制示例</button></div><pre><code># 我的大学第一周
 
-## 二级标题
+## 本周课程
 
-### 三级标题</code></pre><button class="copy" type="button">复制示例</button></div><p># 后留一个空格。1～6 个 # 对应六级标题。</p></article><article><h3>强调</h3><div class="example"><pre><code>**重点内容**
+### 高等数学</code></pre></div><div class="result"><div class="result-label">预览效果</div><div class="rendered"><h1>我的大学第一周</h1><h2>本周课程</h2><h3>高等数学</h3></div></div></div><p>一级标题写整篇笔记的名称，二级标题写各个部分。标题下换一行就可以写正文；前后各空一行会更容易阅读。</p></article><article id="bold"><h3>加粗</h3><p>把要加粗的文字放在两对星号中间。星号和文字之间不要留空格。</p><div class="comparison"><div class="example"><div class="example-bar"><span>写法</span><button class="copy" type="button">复制示例</button></div><pre><code>明天交 **程序设计作业**。</code></pre></div><div class="result"><div class="result-label">预览效果</div><div class="rendered"><p>明天交 <strong>程序设计作业</strong>。</p></div></div></div><p><code>**重点**</code> 能加粗；<code>** 重点 **</code> 通常会把星号也显示出来。</p></article><article id="italic-strike"><h3>斜体和删除线</h3><p>两边各一个星号是斜体，各两个波浪号是删除线。</p><div class="comparison"><div class="example"><div class="example-bar"><span>写法</span><button class="copy" type="button">复制示例</button></div><pre><code>*Introduction to Algorithms*
 
-*英文书名*
-
-~~已经过时~~</code></pre><button class="copy" type="button">复制示例</button></div><p>两边各两个星号是加粗，一个星号是斜体，两个波浪号是删除线。</p></article><article><h3>引用与分隔线</h3><div class="example"><pre><code>&gt; 学而不思则罔。
+~~周三提交~~ 改为周五提交。</code></pre></div><div class="result"><div class="result-label">预览效果</div><div class="rendered"><p><em>Introduction to Algorithms</em></p><p><del>周三提交</del> 改为周五提交。</p></div></div></div></article><article id="quote"><h3>引用</h3><p>在引用内容前写 <code>&gt;</code>，后面留一个空格。引用多段文字时，中间的空行也可以写一个 <code>&gt;</code>。</p><div class="comparison"><div class="example"><div class="example-bar"><span>写法</span><button class="copy" type="button">复制示例</button></div><pre><code>&gt; 学而不思则罔。
+&gt;
+&gt; 思而不学则殆。</code></pre></div><div class="result"><div class="result-label">预览效果</div><div class="rendered"><blockquote><p>学而不思则罔。</p><p>思而不学则殆。</p></blockquote></div></div></div></article><article id="horizontal-rule"><h3>分隔线</h3><p>把三个减号单独放一行，前后各空一行。预览里会出现一条横线。</p><div class="comparison"><div class="example"><div class="example-bar"><span>写法</span><button class="copy" type="button">复制示例</button></div><pre><code>上半部分。
 
 ---
 
-下面开始新的内容。</code></pre><button class="copy" type="button">复制示例</button></div><p>&gt; 用来引用别人的话；--- 单独放一行，前后空一行更清楚。</p></article></section><section id="breaks"><h2>回车、空行与换行</h2><p class="intro">编辑器里换了一行，预览不一定换行。先分清这几种情况。</p><article><h3>普通回车</h3><div class="example"><pre><code>今天学习 Markdown。
-明天整理课堂笔记。</code></pre><button class="copy" type="button">复制示例</button></div><p>默认设置下仍是同一段，通常连着显示。窗口变窄引起的自动折行，也不会新增段落。</p></article><article><h3>空一行分段</h3><div class="example"><pre><code>第一段。
+下半部分。</code></pre></div><div class="result"><div class="result-label">预览效果</div><div class="rendered"><p>上半部分。</p><hr><p>下半部分。</p></div></div></div><p>不要紧接着正文写一行 <code>---</code>，那种写法可能把上一行变成二级标题。</p></article></section><section id="breaks"><h2>回车、空行与换行</h2><p class="intro">编辑区里的回车和预览里的换行不是一回事。下面几段文字只改了行末的写法，可以直接比较效果。</p><article id="soft-break"><h3>只按一次回车</h3><p>两行文字之间没有空行时，默认仍属于同一段。预览会根据宽度排版，不一定在你按回车的位置换行。</p><div class="comparison"><div class="example"><div class="example-bar"><span>写法</span><button class="copy" type="button">复制示例</button></div><pre><code>今天学习 Markdown。
+明天整理课堂笔记。</code></pre></div><div class="result"><div class="result-label">预览效果</div><div class="rendered"><p>今天学习 Markdown。 明天整理课堂笔记。</p></div></div></div><p>窗口变窄时，长句也会自动折到下一行。这只是显示宽度变了，并没有多出一个段落。</p></article><article id="paragraphs"><h3>空一行：另起一段</h3><p>在两段文字中间留一个空行，也就是在第一段末尾连按两次回车。</p><div class="comparison"><div class="example"><div class="example-bar"><span>写法</span><button class="copy" type="button">复制示例</button></div><pre><code>第一段。
 
 第二段。
 
 
 
-第三段。</code></pre><button class="copy" type="button">复制示例</button></div><p>一个空行分开两个段落；多空几行通常不会增加预览中的间距。</p></article><article><h3>行末两个空格</h3><div class="example"><pre><code>第一行后面有两个空格。  
-第二行仍在同一段。</code></pre><button class="copy" type="button">复制示例</button></div><p>在第一行末尾按两次空格，再按回车。点“复制示例”会保留这两个空格。</p></article><article><h3>行末反斜杠</h3><div class="example"><pre><code>第一行以反斜杠结尾。\
-第二行仍在同一段。</code></pre><button class="copy" type="button">复制示例</button></div><p>也可以在行末写一个反斜杠，再回车。</p></article><article><h3>用 &lt;br&gt; 换行</h3><div class="example"><pre><code>周一&lt;br&gt;上高数课
+第三段。</code></pre></div><div class="result"><div class="result-label">预览效果</div><div class="rendered"><p>第一段。</p><p>第二段。</p><p>第三段。</p></div></div></div><p>空一行和空三行都只是分段，通常不会让预览中的间距继续增加。</p></article><article id="two-spaces"><h3>行末两个空格：在段内换行</h3><p>写完第一行，按两次空格，再按回车。下面行末标出的两个位置都是空格，复制按钮会保留它们。</p><div class="comparison"><div class="example"><div class="example-bar"><span>写法</span><button class="copy" type="button">复制示例</button></div><pre><code>第一行。<mark class="spaces">  </mark>
+第二行。</code></pre></div><div class="result"><div class="result-label">预览效果</div><div class="rendered"><p>第一行。<br>第二行。</p></div></div></div><p>一个空格不够。这种换行仍在同一段里，所以两行之间没有新段落的间距。</p></article><article id="backslash-break"><h3>行末反斜杠：另一种换行写法</h3><p>在第一行末尾写一个反斜杠 <code>&#92;</code>，然后按回车。它比看不见的行末空格更容易检查。</p><div class="comparison"><div class="example"><div class="example-bar"><span>写法</span><button class="copy" type="button">复制示例</button></div><pre><code>第一行。\
+第二行。</code></pre></div><div class="result"><div class="result-label">预览效果</div><div class="rendered"><p>第一行。<br>第二行。</p></div></div></div><p>这里是反斜杠 <code>&#92;</code>，不是路径中常用的斜杠 <code>/</code>。</p></article><article id="html-break"><h3>用 &lt;br&gt; 换行</h3><p><code>&lt;br&gt;</code> 是 HTML 的换行标签。写到哪里，就从哪里换行；表格单元格内也能用。</p><div class="comparison"><div class="example"><div class="example-bar"><span>写法</span><button class="copy" type="button">复制示例</button></div><pre><code>周一&lt;br&gt;高等数学
 
-周二&lt;br&gt;&lt;br&gt;上程序设计课</code></pre><button class="copy" type="button">复制示例</button></div><p>&lt;br&gt; 是 HTML 换行标签。连续两个会空出一行，表格单元格内也能用它。</p></article><article><h3>VSCode 的设置</h3><div class="example"><pre><code>markdown.preview.breaks</code></pre><button class="copy" type="button">复制示例</button></div><p>默认关闭。开启后，普通回车也会换行。课堂示例按默认关闭的效果讲解；代码块会保留自己的换行。</p></article></section><section id="lists"><h2>列表与缩进</h2><p class="intro">同一级顶格写，下一层向右缩进。</p><article><h3>无序列表</h3><div class="example"><pre><code>- 阅读讲义
+周二&lt;br&gt;&lt;br&gt;程序设计</code></pre></div><div class="result"><div class="result-label">预览效果</div><div class="rendered"><p>周一<br>高等数学</p><p>周二<br><br>程序设计</p></div></div></div><p>连续写两个 <code>&lt;br&gt;</code> 会多空一行。普通正文分段直接留空行就可以。</p></article><article id="preview-breaks"><h3>让普通回车也换行</h3><p>如果希望每次回车都在预览中换行，可以修改 VS Code 的预览设置。</p><div class="comparison source-only"><div class="example"><div class="example-bar"><span>写法</span><button class="copy" type="button">复制示例</button></div><pre><code>markdown.preview.breaks</code></pre></div></div><p>打开设置，搜索上面的完整名称，勾选对应选项。本文的例子按默认关闭的效果展示；代码块里的换行不受这项设置影响。</p></article></section><section id="lists"><h2>列表与缩进</h2><p class="intro">一项写一行。标记后面要有空格；同一级的标记对齐。</p><article id="unordered"><h3>无序列表</h3><p>在每一项前写减号和一个空格。加号、星号也可以作列表标记，一份列表里统一使用一种即可。</p><div class="comparison"><div class="example"><div class="example-bar"><span>写法</span><button class="copy" type="button">复制示例</button></div><pre><code>- 阅读讲义
 - 整理笔记
-- 完成练习</code></pre><button class="copy" type="button">复制示例</button></div><p>-、+、* 都能作标记，后面要有空格。一个列表尽量统一用同一种。</p></article><article><h3>自动编号</h3><div class="example"><pre><code>1. 打开网页
+- 完成练习</code></pre></div><div class="result"><div class="result-label">预览效果</div><div class="rendered"><ul><li>阅读讲义</li><li>整理笔记</li><li>完成练习</li></ul></div></div></div></article><article id="ordered"><h3>有序列表</h3><p>用数字、英文句点和空格开头。后面的序号由预览自动排列，所以源码也可以全写 <code>1.</code>。</p><div class="comparison"><div class="example"><div class="example-bar"><span>写法</span><button class="copy" type="button">复制示例</button></div><pre><code>1. 打开网页
 1. 新建文件
-1. 观察预览</code></pre><button class="copy" type="button">复制示例</button></div><p>预览会自动排成 1、2、3。若第一项写 7.，这组列表就从 7 开始。</p></article><article><h3>嵌套列表</h3><div class="example"><pre><code>- 周一
+1. 观察预览</code></pre></div><div class="result"><div class="result-label">预览效果</div><div class="rendered"><ol><li>打开网页</li><li>新建文件</li><li>观察预览</li></ol></div></div></div><p>第一项的数字决定起始编号。如果第一项写 <code>7.</code>，预览就从 7 开始。</p></article><article id="nested"><h3>嵌套列表</h3><p>子项目在前面加四个空格。返回上一级时，去掉这四个空格，让标记和同级项目对齐。</p><div class="comparison"><div class="example"><div class="example-bar"><span>写法</span><button class="copy" type="button">复制示例</button></div><pre><code>- 周一
     - 高等数学
     - 程序设计
 - 周二
     1. 预习
-    2. 复习</code></pre><button class="copy" type="button">复制示例</button></div><p>子列表缩进到父项正文之后。本例统一用 4 个空格；不要把同层项目错缩成子层。</p></article><article><h3>列表里的第二段</h3><div class="example"><pre><code>1. 观察现象
+    2. 复习</code></pre></div><div class="result"><div class="result-label">预览效果</div><div class="rendered"><ul><li>周一<ul><li>高等数学</li><li>程序设计</li></ul></li><li>周二<ol><li>预习</li><li>复习</li></ol></li></ul></div></div></div><p>这里的四个空格适用于这个示例。如果父项编号很长，子项还需要缩进到父项正文开始的位置之后。</p></article><article id="list-paragraph"><h3>同一项里再写一段</h3><p>先空一行，再缩进到该项正文开始的位置。下面 <code>1. </code> 占三个字符，所以续写的段落前面留三个空格。</p><div class="comparison"><div class="example"><div class="example-bar"><span>写法</span><button class="copy" type="button">复制示例</button></div><pre><code>1. 观察现象
 
    先记录实际结果。
 
 2. 尝试修改
 
-   再用相同输入检查。</code></pre><button class="copy" type="button">复制示例</button></div><p>续写的段落与该项正文对齐。本例 1. 后的正文从第 4 列开始，所以续段前留 3 个空格。空行会让列表更疏朗。</p></article><article><h3>任务列表</h3><div class="example"><pre><code>- [ ] 阅读讲义
-- [x] 完成练习</code></pre><button class="copy" type="button">复制示例</button></div><p>GitHub 会显示复选框；本工作坊保留 VSCode 原生预览行为，可能显示 [ ] 与 [x] 文本。不同平台的扩展语法会有差别。</p></article></section><section id="paths"><h2>链接、图片与相对路径</h2><p class="intro">从当前这份 Markdown 文件所在的文件夹出发找目标。</p><article><h3>链接</h3><div class="example"><pre><code>[南京大学](https://www.nju.edu.cn)
-
-[打开笔记](./notes/课堂笔记.md)</code></pre><button class="copy" type="button">复制示例</button></div><p>方括号里是显示的文字，小括号里是地址。点击预览里的文字可以打开目标。</p></article><article><h3>图片</h3><div class="example"><pre><code>![山间日出](./assets/山间日出.svg)</code></pre><button class="copy" type="button">复制示例</button></div><p>图片比链接多一个 !。方括号中是替代文字；图片打不开时先检查文件名和路径。</p></article><article><h3>. 表示当前文件夹</h3><div class="example"><pre><code>Markdown/
+   再用相同输入检查。</code></pre></div><div class="result"><div class="result-label">预览效果</div><div class="rendered"><ol><li><p>观察现象</p><p>先记录实际结果。</p></li><li><p>尝试修改</p><p>再用相同输入检查。</p></li></ol></div></div></div></article><article id="task-list"><h3>任务列表</h3><p><code>[ ]</code> 表示未完成，<code>[x]</code> 表示已完成。方括号里面的空格不能漏。</p><div class="comparison source-only"><div class="example"><div class="example-bar"><span>写法</span><button class="copy" type="button">复制示例</button></div><pre><code>- [ ] 阅读讲义
+- [x] 完成练习</code></pre></div></div><p>GitHub 会把它们显示成复选框。本练习网页沿用 VS Code 原生 Markdown 预览，可能直接显示 <code>[ ]</code> 和 <code>[x]</code>；这不代表你写错了。</p></article></section><section id="paths"><h2>链接、图片与路径</h2><p class="intro">相对路径从当前这份 .md 文件所在的文件夹开始算。先确定笔记在哪里，再找链接或图片在哪里。</p><article id="web-link"><h3>插入网页链接</h3><p>方括号里写显示的文字，小括号里写网址。注意括号都用英文符号。</p><div class="comparison"><div class="example"><div class="example-bar"><span>写法</span><button class="copy" type="button">复制示例</button></div><pre><code>[南京大学](https://www.nju.edu.cn)</code></pre></div><div class="result"><div class="result-label">预览效果</div><div class="rendered"><p><a href="https://www.nju.edu.cn" target="_blank" rel="noopener">南京大学</a></p></div></div></div><p>预览中会显示“南京大学”，点击后打开网址。直接在编辑区看时，括号和网址都会保留。</p></article><article id="file-link"><h3>链接到另一份笔记</h3><p>如果当前笔记和 notes 文件夹放在一起，就用下面的路径打开 notes 里的文件。</p><div class="comparison source-only"><div class="example"><div class="example-bar"><span>写法</span><button class="copy" type="button">复制示例</button></div><pre><code>[打开笔记](./notes/链接目标.md)</code></pre></div></div><p>练习目录已经包含这份“链接目标.md”，可以直接试。链接到自己的文件时，把路径和文件名换成实际位置。</p></article><article id="image"><h3>插入图片</h3><p>图片的写法比链接多一个感叹号。方括号里写图片说明，小括号里写图片地址。</p><div class="comparison"><div class="example"><div class="example-bar"><span>写法</span><button class="copy" type="button">复制示例</button></div><pre><code>![山间日出](./assets/山间日出.svg)</code></pre></div><div class="result"><div class="result-label">预览效果</div><div class="rendered"><img src="sunrise.svg" alt="山间日出" width="600" height="360" loading="lazy"></div></div></div><p>这张图已经放在练习目录的 assets 文件夹里。如果用自己的图片，先通过“文件 → 导入本地文件…”把图片导入，再写它的实际路径。</p></article><article id="current-folder"><h3>. 表示当前文件夹</h3><p>假设“我的笔记.md”和 assets 文件夹放在一起，文件结构如下。</p><div class="file-tree"><p>文件位置</p><pre>Markdown/
 ├── 我的笔记.md
 └── assets/
-    └── 山间日出.svg
-
-./assets/山间日出.svg</code></pre><button class="copy" type="button">复制示例</button></div><p>在“我的笔记.md”中写上面的路径：先从当前文件夹进入 assets，再找到图片。开头的 ./ 也可以省略。</p></article><article><h3>.. 表示上一级文件夹</h3><div class="example"><pre><code>Markdown/
+    └── 山间日出.svg</pre></div><div class="comparison source-only"><div class="example"><div class="example-bar"><span>写法</span><button class="copy" type="button">复制示例</button></div><pre><code>![山间日出](./assets/山间日出.svg)</code></pre></div></div><p><code>./</code> 从当前文件夹开始，<code>assets/</code> 进入 assets，再找到图片。这里的 <code>./</code> 也可以省略，写成 <code>assets/山间日出.svg</code>。</p></article><article id="parent-folder"><h3>.. 表示上一级文件夹</h3><p>如果笔记放在 notes 里面，就需要先退出 notes，再进入 assets。</p><div class="file-tree"><p>文件位置</p><pre>Markdown/
 ├── notes/
 │   └── 课堂笔记.md
 └── assets/
-    └── 山间日出.svg
+    └── 山间日出.svg</pre></div><div class="comparison source-only"><div class="example"><div class="example-bar"><span>写法</span><button class="copy" type="button">复制示例</button></div><pre><code>![山间日出](../assets/山间日出.svg)</code></pre></div></div><p><code>../</code> 向上走一级，<code>../../</code> 向上走两级。路径里统一用 <code>/</code>，不要直接粘贴 Windows 的 <code>C:&#92;…</code> 地址。</p></article></section><section id="code"><h2>行内代码与代码块</h2><p class="intro">Markdown 里的代码是用来展示的。要运行 Python，请打开 .py 文件，再启动调试。</p><article id="inline-code"><h3>一句话里的代码</h3><p>把函数名、文件名或命令放在一对反引号中间。反引号通常在键盘 Esc 下方，和单引号不是同一个符号。</p><div class="comparison"><div class="example"><div class="example-bar"><span>写法</span><button class="copy" type="button">复制示例</button></div><pre><code>用 `print()` 输出结果。
 
-../assets/山间日出.svg</code></pre><button class="copy" type="button">复制示例</button></div><p>在 notes/课堂笔记.md 中：.. 先回到 Markdown，再进入 assets。../../ 表示连续向上两级。路径统一用 /。</p></article></section><section id="code"><h2>行内代码与代码块</h2><p class="intro">把代码展示给别人看，并不会自动运行它。</p><article><h3>行内代码</h3><div class="example"><pre><code>用 `print()` 输出结果。</code></pre><button class="copy" type="button">复制示例</button></div><p>短函数名、文件名或命令，用一对反引号包起来。反引号通常在键盘 Esc 下方。</p></article><article><h3>代码块</h3><div class="example"><pre><code>```python
+把文件保存为 `notes.md`。</code></pre></div><div class="result"><div class="result-label">预览效果</div><div class="rendered"><p>用 <code>print()</code> 输出结果。</p><p>把文件保存为 <code>notes.md</code>。</p></div></div></div></article><article id="fenced-code"><h3>多行代码</h3><p>第一行写三个反引号，再写语言名；最后另起一行，写三个反引号结束。代码按原来的缩进和换行显示。</p><div class="comparison"><div class="example"><div class="example-bar"><span>写法</span><button class="copy" type="button">复制示例</button></div><pre><code>```python
 name = &quot;南大&quot;
 print(&quot;你好，&quot; + name)
-```</code></pre><button class="copy" type="button">复制示例</button></div><p>第一行三个反引号开始，最后一行三个反引号结束。python 只用来指定语法高亮。要运行程序，请打开 .py 文件并启动调试。</p></article></section><section id="table"><h2>表格</h2><p class="intro">先写表头，再用分隔行告诉预览如何对齐。</p><article><h3>三列课程表</h3><div class="example"><pre><code>| 课程 | 星期 | 学分 |
+```</code></pre></div><div class="result"><div class="result-label">预览效果</div><div class="rendered"><pre class="preview-code"><code><span class="syntax-name">name</span> = <span class="syntax-string">"南大"</span>
+<span class="syntax-call">print</span>(<span class="syntax-string">"你好，"</span> + name)</code></pre></div></div></div><p><code>python</code> 用来选择代码配色，不会启动 Python。也可以写 <code>c</code>、<code>javascript</code>、<code>bash</code>；不写语言名也能显示代码块。</p></article><article id="literal-backtick"><h3>在行内代码中显示反引号</h3><p>内容里已经有一个反引号时，外面用两个反引号包起来。</p><div class="comparison"><div class="example"><div class="example-bar"><span>写法</span><button class="copy" type="button">复制示例</button></div><pre><code>``这里有一个 ` 符号``</code></pre></div><div class="result"><div class="result-label">预览效果</div><div class="rendered"><p><code>这里有一个 ` 符号</code></p></div></div></div></article></section><section id="table"><h2>表格</h2><p class="intro">竖线分隔列，一行代表一行内容。表头下面的分隔行不能漏。</p><article id="simple-table"><h3>先写一个两列表格</h3><p>第一行写表头，第二行每列写三个减号，从第三行开始写数据。源码里的列宽不必完全对齐。</p><div class="comparison"><div class="example"><div class="example-bar"><span>写法</span><button class="copy" type="button">复制示例</button></div><pre><code>| 课程 | 星期 |
+| --- | --- |
+| 高等数学 | 周一 |
+| 程序设计 | 周三 |</code></pre></div><div class="result"><div class="result-label">预览效果</div><div class="rendered"><table><thead><tr><th>课程</th><th>星期</th></tr></thead><tbody><tr><td>高等数学</td><td>周一</td></tr><tr><td>程序设计</td><td>周三</td></tr></tbody></table></div></div></div></article><article id="table-align"><h3>设置列的对齐方式</h3><p>冒号在左边表示左对齐，两边都有表示居中，在右边表示右对齐。只改第二行，就能改变整列的对齐方式。</p><div class="comparison"><div class="example"><div class="example-bar"><span>写法</span><button class="copy" type="button">复制示例</button></div><pre><code>| 课程 | 星期 | 学分 |
 | :--- | :---: | ---: |
 | 高数 | 一 | 5 |
-| 程设 | 三 | 4 |</code></pre><button class="copy" type="button">复制示例</button></div><p>| 分列，第二行不能漏。:--- 左对齐，:---: 居中，---: 右对齐。单元格里换行可以用 &lt;br&gt;。</p></article></section><section id="math"><h2>LaTeX 数学公式</h2><p class="intro">一句话中的公式用一对 $，单独展示的公式用两对 $$。</p><article><h3>行内与独立公式</h3><div class="example"><pre><code>行内公式：$E=mc^2$。
+| 程设 | 三 | 4 |</code></pre></div><div class="result"><div class="result-label">预览效果</div><div class="rendered"><table><thead><tr><th class="left">课程</th><th class="center">星期</th><th class="right">学分</th></tr></thead><tbody><tr><td class="left">高数</td><td class="center">一</td><td class="right">5</td></tr><tr><td class="left">程设</td><td class="center">三</td><td class="right">4</td></tr></tbody></table></div></div></div></article><article id="table-content"><h3>单元格里换行、写竖线</h3><p>单元格内换行用 <code>&lt;br&gt;</code>。如果内容本身需要竖线，在竖线前加反斜杠，避免它被当成分列标记。</p><div class="comparison"><div class="example"><div class="example-bar"><span>写法</span><button class="copy" type="button">复制示例</button></div><pre><code>| 内容 | 写法 |
+| --- | --- |
+| 第一行&lt;br&gt;第二行 | 换行 |
+| A \| B | 竖线 |</code></pre></div><div class="result"><div class="result-label">预览效果</div><div class="rendered"><table><thead><tr><th>内容</th><th>写法</th></tr></thead><tbody><tr><td>第一行<br>第二行</td><td>换行</td></tr><tr><td>A | B</td><td>竖线</td></tr></tbody></table></div></div></div></article></section><section id="math"><h2>数学公式</h2><p class="intro">这个练习网页支持 LaTeX 数学公式。一句话里的公式用一对 $，单独占一行的公式用两对 $$。</p><article id="inline-math"><h3>行内公式</h3><p>把公式放在两个美元符号中间。开头的 <code>$</code> 后、结尾的 <code>$</code> 前都不要留空格。</p><div class="comparison"><div class="example"><div class="example-bar"><span>写法</span><button class="copy" type="button">复制示例</button></div><pre><code>面积为 $S=\pi r^2$。</code></pre></div><div class="result"><div class="result-label">预览效果</div><div class="rendered"><p>面积为 <math xmlns="http://www.w3.org/1998/Math/MathML"><mi>S</mi><mo>=</mo><mi>π</mi><msup><mi>r</mi><mn>2</mn></msup></math>。</p></div></div></div></article><article id="display-math"><h3>独立公式</h3><p>开始和结束各用一行 <code>$$</code>，中间写公式，整块前后各空一行。</p><div class="comparison"><div class="example"><div class="example-bar"><span>写法</span><button class="copy" type="button">复制示例</button></div><pre><code>求和公式：
 
 $$
 \sum_{i=1}^{n} i=\frac{n(n+1)}{2}
-$$</code></pre><button class="copy" type="button">复制示例</button></div><p>公式由 VSCode 的数学扩展渲染。独立公式前后空一行，源码更好读。</p></article><article><h3>常用写法</h3><div class="example"><pre><code>$x_i^2$
+$$</code></pre></div><div class="result"><div class="result-label">预览效果</div><div class="rendered"><p>求和公式：</p><div class="display-math"><math xmlns="http://www.w3.org/1998/Math/MathML"><munderover><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></munderover><mi>i</mi><mo>=</mo><mfrac><mrow><mi>n</mi><mo>(</mo><mi>n</mi><mo>+</mo><mn>1</mn><mo>)</mo></mrow><mn>2</mn></mfrac></math></div></div></div></div></article><article id="subscript"><h3>上下标和花括号</h3><p><code>_</code> 是下标，<code>^</code> 是上标。上标或下标有多个字符时，用花括号括住。</p><div class="comparison"><div class="example"><div class="example-bar"><span>写法</span><button class="copy" type="button">复制示例</button></div><pre><code>$x_i^2$
 
-$\frac{a+b}{c}$
+$x_{ij}^{10}$</code></pre></div><div class="result"><div class="result-label">预览效果</div><div class="rendered"><p><math xmlns="http://www.w3.org/1998/Math/MathML"><msubsup><mi>x</mi><mi>i</mi><mn>2</mn></msubsup></math></p><p><math xmlns="http://www.w3.org/1998/Math/MathML"><msubsup><mi>x</mi><mrow><mi>i</mi><mi>j</mi></mrow><mn>10</mn></msubsup></math></p></div></div></div><p><code>x^10</code> 只会把 1 放到上标里，0 仍在后面。要写 10 次方，用 <code>x^{10}</code>。</p></article><article id="fraction-root"><h3>分数和根号</h3><p><code>&#92;frac</code> 后面的第一组花括号放分子，第二组放分母；<code>&#92;sqrt</code> 后的花括号放被开方的内容。</p><div class="comparison"><div class="example"><div class="example-bar"><span>写法</span><button class="copy" type="button">复制示例</button></div><pre><code>$\frac{a+b}{c}$
 
-$\sqrt{x}$
+$\sqrt{x+1}$</code></pre></div><div class="result"><div class="result-label">预览效果</div><div class="rendered"><p><math xmlns="http://www.w3.org/1998/Math/MathML"><mfrac><mrow><mi>a</mi><mo>+</mo><mi>b</mi></mrow><mi>c</mi></mfrac></math></p><p><math xmlns="http://www.w3.org/1998/Math/MathML"><msqrt><mi>x</mi><mo>+</mo><mn>1</mn></msqrt></math></p></div></div></div></article><article id="greek"><h3>希腊字母和常用符号</h3><p>这些命令以反斜杠开头。字母名称的大小写会影响结果。</p><div class="comparison"><div class="example"><div class="example-bar"><span>写法</span><button class="copy" type="button">复制示例</button></div><pre><code>$\alpha + \beta$
 
-$\alpha + \beta$</code></pre><button class="copy" type="button">复制示例</button></div><p>_ 是下标，^ 是上标，frac 是分数，sqrt 是根号。多个字符要用花括号分组。</p></article></section><section id="mermaid"><h2>Mermaid 流程图</h2><p class="intro">在 mermaid 代码块里写出节点和连接关系。</p><article><h3>三个步骤</h3><div class="example"><pre><code>```mermaid
+$x \leq 5$
+
+$a \times b$
+
+$\infty$</code></pre></div><div class="result"><div class="result-label">预览效果</div><div class="rendered"><p><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>α</mi><mo>+</mo><mi>β</mi></math></p><p><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>x</mi><mo>≤</mo><mn>5</mn></math></p><p><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>a</mi><mo>×</mo><mi>b</mi></math></p><p><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>∞</mi></math></p></div></div></div><p>公式显示不出来时，先检查美元符号、反斜杠和花括号是否完整。</p></article></section><section id="mermaid"><h2>流程图</h2><p class="intro">在标记为 mermaid 的代码块里写步骤和连线，预览会画成图。</p><article id="flowchart"><h3>画三个相连的步骤</h3><p><code>flowchart TD</code> 表示从上到下画。A、B、C 是节点名称；方括号里的文字显示在方框中；箭头连接两个节点。</p><div class="comparison"><div class="example"><div class="example-bar"><span>写法</span><button class="copy" type="button">复制示例</button></div><pre><code>```mermaid
 flowchart TD
     A[观察问题] --&gt; B[提出猜想]
     B --&gt; C[动手验证]
-```</code></pre><button class="copy" type="button">复制示例</button></div><p>TD 表示从上到下，LR 表示从左到右。方括号里的文字显示在节点中，--&gt; 连接两个节点。</p></article></section><section id="html"><h2>折叠、注释与转义</h2><p class="intro">需要补充排版时，可以用少量 HTML。</p><article><h3>折叠答案</h3><div class="example"><pre><code>&lt;details&gt;
-&lt;summary&gt;点这里看答案&lt;/summary&gt;
+```</code></pre></div><div class="result"><div class="result-label">预览效果</div><div class="rendered"><div class="flow" role="img" aria-label="观察问题，接着提出猜想，最后动手验证"><div>观察问题</div><span aria-hidden="true">↓</span><div>提出猜想</div><span aria-hidden="true">↓</span><div>动手验证</div></div></div></div></div><p>把 <code>TD</code> 改成 <code>LR</code>，图就会从左到右排列。代码块开头必须写 <code>mermaid</code>，写成 <code>python</code> 或不写，就只会显示代码。</p></article><article id="flow-branch"><h3>加入判断分支</h3><p>判断节点用花括号。两条连线后面分别写条件，让读者知道沿哪条线继续。</p><div class="comparison source-only"><div class="example"><div class="example-bar"><span>写法</span><button class="copy" type="button">复制示例</button></div><pre><code>```mermaid
+flowchart TD
+    A{结果正确吗} --&gt;|是| B[结束]
+    A --&gt;|否| C[检查代码]
+    C --&gt; A
+```</code></pre></div></div><p>同一个节点名称会指向同一个节点。最后一行 <code>C --&gt; A</code> 把“检查代码”连回前面的判断。</p></article></section><section id="html"><h2>折叠、注释与转义</h2><p class="intro">折叠和注释用到少量 HTML。照着下面的完整写法输入，并保留开始与结束标签。</p><article id="details"><h3>折叠一段内容</h3><p><code>&lt;details&gt;</code> 是整个折叠区域的开始，<code>&lt;/details&gt;</code> 是结束。<code>&lt;summary&gt;</code> 和 <code>&lt;/summary&gt;</code> 中间写可以点击的标题。</p><div class="comparison"><div class="example"><div class="example-bar"><span>写法</span><button class="copy" type="button">复制示例</button></div><pre><code>&lt;details&gt;
+&lt;summary&gt;查看答案&lt;/summary&gt;
 
 答案是 **15**。
 
-&lt;/details&gt;</code></pre><button class="copy" type="button">复制示例</button></div><p>summary 是可点击的标题。正文前后各空一行，让其中的 Markdown 正常解析。</p></article><article><h3>只留在源码里的备注</h3><div class="example"><pre><code>这段文字会显示。
+&lt;/details&gt;</code></pre></div><div class="result"><div class="result-label">预览效果</div><div class="rendered"><details><summary>查看答案</summary><p>答案是 <strong>15</strong>。</p></details></div></div></div><p>标题后空一行再写正文，正文和结束标签之间也空一行，这样正文中的加粗、列表等 Markdown 写法才能正常解析。点右侧“查看答案”可以试一下。</p></article><article id="comments"><h3>在源码中留备注</h3><p>把备注放进 <code>&lt;!--</code> 和 <code>--&gt;</code> 之间，预览中不会显示这部分文字。</p><div class="comparison"><div class="example"><div class="example-bar"><span>写法</span><button class="copy" type="button">复制示例</button></div><pre><code>这段文字会显示。
 
-&lt;!-- 这里留给自己做备注 --&gt;</code></pre><button class="copy" type="button">复制示例</button></div><p>&lt;!-- 和 --&gt; 之间的内容不在预览中显示，但仍保存在文件里。</p></article><article><h3>原样显示符号</h3><div class="example"><pre><code>\*\*重点\*\*
+&lt;!-- 这里留给自己做备注 --&gt;</code></pre></div><div class="result"><div class="result-label">预览效果</div><div class="rendered"><p>这段文字会显示。</p></div></div></div><p>备注仍然保存在 .md 文件里。把源文件发给别人时，对方也能看到备注。</p></article><article id="escape"><h3>让符号按原样显示</h3><p>如果希望星号、井号直接显示出来，而不是参与排版，在符号前加反斜杠。</p><div class="comparison"><div class="example"><div class="example-bar"><span>写法</span><button class="copy" type="button">复制示例</button></div><pre><code>\*\*重点\*\*
 
-\# 这不是标题</code></pre><button class="copy" type="button">复制示例</button></div><p>在特殊符号前加反斜杠，让它失去排版作用。也可以用行内代码展示完整写法。</p></article></section><section id="exercise"><h2>课堂任务：我的大学第一周</h2><p class="intro">在练习网页的“文件”菜单中选择“新建 Markdown 文件”，命名为“我的大学第一周.md”。完成下面六项，再打开预览检查。</p><div class="checklist"><label><input type="checkbox" data-task="0"><span>用一个一级标题写笔记名称，再写至少两个二级标题。</span></label><label><input type="checkbox" data-task="1"><span>写一份至少三项的列表；任选一项加粗。</span></label><label><input type="checkbox" data-task="2"><span>插入 assets 文件夹里的“山间日出.svg”，让图片正常显示。</span></label><label><input type="checkbox" data-task="3"><span>写一个行内公式或独立公式。</span></label><label><input type="checkbox" data-task="4"><span>插入一个带 python 语言标记的代码块，至少写两行代码。</span></label><label><input type="checkbox" data-task="5"><span>检查预览，再按 Ctrl + Shift + S 下载文件；含图片的笔记用“文件 → 下载整个练习目录”一起保存。</span></label></div><p>遇到不会的语法，直接点左侧目录。你也可以打开编辑器里的“Markdown 语法大全.md”查更多例子。</p><a class="practice" href="../" target="_blank" rel="noopener">开始动手 →</a></section><section id="debug"><h2>让程序停下来，看一眼</h2><p class="intro">打开 debug/01_循环边界.py。目标是算出 1 + 2 + 3 + 4 + 5 = 15。</p><ol><li>点击 total = total + i 左侧的行号空白处，设一个红色断点。</li><li>按 F5 启动，首次运行会加载 Python。</li><li>暂停后，查看左侧变量 n、i、total。黄色行是下一步将要执行的代码。</li><li>反复按 F10，观察 i 最后取到了几。</li><li>修改循环范围，再运行一次，确认结果是 15。</li></ol><div class="keys"><p><kbd>F9</kbd> 设置 / 取消断点</p><p><kbd>F5</kbd> 启动 / 继续</p><p><kbd>F10</kbd> 单步跳过</p><p><kbd>Alt + F11</kbd> 单步进入（网页）</p><p><kbd>Shift + F11</kbd> 单步跳出</p><p><kbd>Shift + F5</kbd> 停止</p></div><h3>再选一个小问题</h3><ul><li>条件边界：满 100 元是否免运费？试试 99、100、101。</li><li>函数参数：原价 36 元、优惠 5 元，为什么算出 -31？</li><li>列表共享：改了新名单，原名单为什么也变了？</li><li>列表下标：第 3 位同学应该用哪个下标？</li></ul><p>参考答案在 debug/参考答案/答案与检验.py。先观察，再修改，最后用原来出错的输入验证。</p></section></main></div><script src="tutorial.js"></script></body></html>
+\# 这不是标题</code></pre></div><div class="result"><div class="result-label">预览效果</div><div class="rendered"><p>**重点**</p><p># 这不是标题</p></div></div></div><p>展示整段语法时，行内代码或代码块通常更方便，不需要逐个转义符号。</p></article></section>
+<section id="save"><h2>保存与下载</h2><p class="intro">网页里的练习会保存在当前浏览器中。要交作业、换电脑或留一份备份，需要下载文件。</p>
+<article><h3>只下载这份笔记</h3><ol><li>在编辑区打开要保存的 <code>.md</code> 文件。</li><li>点“文件 → 下载当前文件”。</li><li>到浏览器的下载记录或电脑的“下载”文件夹中找到它。</li></ol><p>下载到的是 Markdown 源文件。以后可以用 VS Code 打开，继续修改。</p></article>
+<article><h3>把图片一起带走</h3><p>如果笔记用了本地图片，点“文件 → 下载整个练习目录（ZIP）”。解压后保留 <code>.md</code> 文件和图片文件夹的位置，图片路径才能继续使用。</p><p>只下载 <code>.md</code> 文件不会把图片装进去。换电脑后图片打不开，先检查图片文件是否也带过去了。</p></article>
+<article><h3>继续编辑电脑上的文件</h3><p>点“文件 → 导入本地文件…”，选择 <code>.md</code> 文件。如果有配套图片，用“导入本地文件夹…”一起导入。</p></article></section>
+<section id="exercise"><h2>课堂任务：我的大学第一周</h2><p class="intro">新建 <code>我的大学第一周.md</code>，完成下面六项。做好一项，可以勾选一项。</p>
+<div class="checklist">
+<div class="task"><label><input type="checkbox" data-task="0"><span><strong>写标题</strong>用一级标题写“我的大学第一周”，再用二级标题写“本周课程”和“学习记录”。</span></label><a href="#headings">查看写法</a></div>
+<div class="task"><label><input type="checkbox" data-task="1"><span><strong>写列表</strong>列出至少三门课程，把其中一门的名字加粗。</span></label><a href="#lists">查看写法</a></div>
+<div class="task"><label><input type="checkbox" data-task="2"><span><strong>插入图片</strong>插入练习目录 assets 里的“山间日出.svg”。预览中要能看到图片。</span></label><a href="#paths">查看写法</a></div>
+<div class="task"><label><input type="checkbox" data-task="3"><span><strong>写公式</strong>写一个行内公式，例如 x 的平方；或写一个独立公式。</span></label><a href="#math">查看写法</a></div>
+<div class="task"><label><input type="checkbox" data-task="4"><span><strong>放一段代码</strong>插入 python 代码块，写两行 Python 代码。代码在预览中要单独成块。</span></label><a href="#code">查看写法</a></div>
+<div class="task"><label><input type="checkbox" data-task="5"><span><strong>保存到电脑</strong>检查预览。点“文件 → 下载整个练习目录（ZIP）”，把文字和图片一起下载。</span></label><a href="#save">查看方法</a></div>
+</div>
+<details class="answer"><summary>查看一份完整示例</summary><div class="example"><div class="example-bar"><span>写法</span><button class="copy" type="button">复制示例</button></div><pre><code># 我的大学第一周
+
+## 本周课程
+
+- **高等数学**
+- 程序设计
+- 大学英语
+
+## 学习记录
+
+今天学会了写 Markdown。
+
+![山间日出](./assets/山间日出.svg)
+
+行内公式：$x^2$。
+
+```python
+name = "南大"
+print("你好，" + name)
+```</code></pre></div><p>这个图片路径适用于直接建在练习目录中的笔记。如果把笔记放进子文件夹，需要相应调整路径。</p></details>
+<a class="practice" href="../" target="_blank" rel="noopener">去练习网页完成任务 ↗</a></section>
+<section id="debug"><h2>代码调试</h2><p class="intro">调试时，可以让程序停在指定行，查看变量，再让它一行一行往下执行。这样就能看到结果是从哪一步开始不对的。</p>
+<article><h3>先认识三个操作</h3><dl class="definitions"><div><dt>断点</dt><dd>告诉程序在哪里暂停。点击代码行左侧、行号旁边的空白处，会出现一个红点；再点一次就取消。</dd></div><div><dt>变量</dt><dd>程序当前保存的值。暂停后看左侧“变量”，就能知道 <code>i</code>、<code>total</code> 等变量现在是多少。</dd></div><div><dt>单步</dt><dd>只往下执行一步。按 <kbd>F10</kbd> 后，黄色位置会移动，变量也可能改变。</dd></div></dl><p>黄色行表示<strong>下一步要执行的代码</strong>。如果黄色行是 <code>total = total + i</code>，这一行的加法还没有执行。</p></article>
+<article><h3>例一：少加了哪个数</h3><p>打开左侧 <code>debug</code> 文件夹里的 <code>01_循环边界.py</code>。它要计算 1 + 2 + 3 + 4 + 5，正确结果是 15，但原程序算出的是 10。</p>
+<div class="example"><div class="example-bar"><span>写法</span><button class="copy" type="button">复制示例</button></div><pre><code>def sum_to(n):
+    total = 0
+    for i in range(1, n):
+        total = total + i
+    return total</code></pre></div>
+<ol><li>在 <code>total = total + i</code> 左边设断点。</li><li>按 <kbd>F5</kbd> 启动。第一次需要加载 Python，等程序停在红点所在行。</li><li>展开左侧“变量”，找到 <code>n</code>、<code>i</code>、<code>total</code>。第一次停下时，它们分别是 5、1、0。</li><li>按一次 <kbd>F10</kbd>，加法执行完，<code>total</code> 变成 1。</li><li>继续单步，观察 <code>i</code> 有没有取到 5，以及 <code>total</code> 最后是多少。</li></ol>
+<div class="trace" data-trace="sum"><h4>逐步查看执行记录</h4><p>下面记录了这段函数的实际执行过程。点“下一步”看变量变化；要亲自设断点，在练习网页里操作。</p><div class="trace-variants" role="group" aria-label="选择程序"><button type="button" data-variant="original" aria-pressed="true">原程序</button><button type="button" data-variant="fixed" aria-pressed="false">修改后</button></div><div class="trace-body"><pre class="trace-code" aria-label="当前执行位置"></pre><dl class="trace-values"></dl></div><p class="trace-caption" aria-live="polite">正在读取执行记录……</p><div class="trace-controls"><button type="button" data-trace-prev>上一步</button><button type="button" data-trace-next>下一步</button><button type="button" data-trace-reset>重新开始</button><span class="trace-count"></span></div></div>
+<details class="answer"><summary>查看原因和修改方法</summary><p><code>range(1, n)</code> 包含 1，不包含 n。n 等于 5 时，i 只会取到 1、2、3、4。</p><div class="example"><div class="example-bar"><span>写法</span><button class="copy" type="button">复制示例</button></div><pre><code>for i in range(1, n + 1):
+    total = total + i</code></pre></div><p>先按 <kbd>Shift</kbd> + <kbd>F5</kbd> 停止，再改代码、重新按 <kbd>F5</kbd>。调试控制台应显示“计算结果：15”，并且不再出现末尾的断言报错。</p><p>还可以把 <code>number</code> 改成 1，检查结果是否为 1；改成 6，检查结果是否为 21。文件末尾的“期望结果”和断言中的数值也要一起改。</p></details></article>
+<article><h3>例二：两个参数传反了</h3><p>打开 <code>debug/03_函数参数.py</code>。买 3 本单价 12 元的书，再减 5 元优惠券，应付 31 元，原程序却算出 -31。</p><div class="example"><div class="example-bar"><span>写法</span><button class="copy" type="button">复制示例</button></div><pre><code>def pay_after_coupon(total, coupon):
+    payment = total - coupon
+    return payment
+
+def checkout(price, count, coupon):
+    subtotal = price * count
+    result = pay_after_coupon(coupon, subtotal)
+    return result</code></pre></div>
+<ol><li>在 <code>result = pay_after_coupon(coupon, subtotal)</code> 这一行设断点，按 <kbd>F5</kbd>。</li><li>暂停后，确认 <code>subtotal</code> 是 36，<code>coupon</code> 是 5。</li><li>按 <kbd>Alt</kbd> + <kbd>F11</kbd> 进入 <code>pay_after_coupon</code>。网页使用这个组合键，以免单独按 F11 让浏览器进入全屏。</li><li>在函数里面看参数：<code>total</code> 变成了 5，<code>coupon</code> 变成了 36。参数按位置传入，所以减法变成了 5 − 36。</li></ol>
+<details class="answer"><summary>查看修改方法</summary><div class="example"><div class="example-bar"><span>写法</span><button class="copy" type="button">复制示例</button></div><pre><code>result = pay_after_coupon(subtotal, coupon)</code></pre></div><p>把总价放前面、优惠券金额放后面。停止调试后修改，再重新运行，结果应为 31。</p></details></article>
+<article><h3>调试时常用的按键</h3><dl class="keys"><div><dt>F5</dt><dd>启动调试；暂停后继续运行到下一个断点。</dd></div><div><dt>F10</dt><dd>执行当前行。遇到函数调用时，执行完整个函数再停下。</dd></div><div><dt>Alt + F11</dt><dd>网页中的单步进入。遇到函数调用时，进入函数里面。</dd></div><div><dt>Shift + F11</dt><dd>执行完当前函数，回到调用它的位置。</dd></div><div><dt>Shift + F5</dt><dd>停止本次调试。改完代码后，重新按 F5 启动。</dd></div></dl><p>有些笔记本需要同时按住 <kbd>Fn</kbd>。也可以把鼠标放到调试工具栏图标上，看到名称后点击对应按钮。</p></article>
+</section>
+<section id="problems"><h2>常见问题</h2>
+<details><summary>写了 #，为什么没有变成标题？</summary><p>确认使用英文 <code>#</code>，它在行首，后面有空格。然后看右侧预览；左侧编辑区本来就会保留这些符号。</p></details>
+<details><summary>整个后半篇都变成了代码，怎么办？</summary><p>往前找最近一处代码块，检查有没有在结束位置另起一行，写上三个反引号。开始和结束要配对。</p></details>
+<details><summary>图片只显示文件名，怎么办？</summary><p>先在左侧找到图片，确认它确实存在。再从当前 .md 文件所在的文件夹出发检查路径。文件名、后缀和大小写都要一致，路径里的斜线用 <code>/</code>。</p></details>
+<details><summary>复制到其他网站后，效果为什么不同？</summary><p>标题、列表等基本写法通常通用。表格、公式、任务列表和 Mermaid 属于常见扩展，各个平台支持的范围可能不同。本文的效果以这次练习网页为准。</p></details>
+<details><summary>修改代码后，为什么调试里还是旧结果？</summary><p>先停止当前调试，再重新启动。已经开始的一次运行不会因为你修改了源码就自动从头运行。</p></details>
+<details><summary>断点没有停住，先检查哪里？</summary><p>确认打开的是 .py 文件，红点设在会执行到的代码行上，例如加法或函数调用。不要设在空行或注释上。再按 F5 启动；程序如果已经结束，需要重新启动。</p></details>
+</section>
+</main></div><script src="tutorial.js"></script></body></html>

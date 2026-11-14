@@ -1,0 +1,249 @@
+{
+  "provenance": {
+    "source": "src/example/debug/01_循环边界.py",
+    "sha256": "d6189b2b8a133e789bc190e2898e39975f40b14b1538b274c96044645c520c3f",
+    "method": "Python sys.settrace, sum_to(5), line events before execution"
+  },
+  "original": {
+    "source": "def sum_to(n):\n    total = 0\n    for i in range(1, n):\n        total = total + i\n    return total",
+    "steps": [
+      {
+        "event": "line",
+        "line": 2,
+        "variables": {
+          "n": 5
+        }
+      },
+      {
+        "event": "line",
+        "line": 3,
+        "variables": {
+          "n": 5,
+          "total": 0
+        }
+      },
+      {
+        "event": "line",
+        "line": 4,
+        "variables": {
+          "n": 5,
+          "total": 0,
+          "i": 1
+        }
+      },
+      {
+        "event": "line",
+        "line": 3,
+        "variables": {
+          "n": 5,
+          "total": 1,
+          "i": 1
+        }
+      },
+      {
+        "event": "line",
+        "line": 4,
+        "variables": {
+          "n": 5,
+          "total": 1,
+          "i": 2
+        }
+      },
+      {
+        "event": "line",
+        "line": 3,
+        "variables": {
+          "n": 5,
+          "total": 3,
+          "i": 2
+        }
+      },
+      {
+        "event": "line",
+        "line": 4,
+        "variables": {
+          "n": 5,
+          "total": 3,
+          "i": 3
+        }
+      },
+      {
+        "event": "line",
+        "line": 3,
+        "variables": {
+          "n": 5,
+          "total": 6,
+          "i": 3
+        }
+      },
+      {
+        "event": "line",
+        "line": 4,
+        "variables": {
+          "n": 5,
+          "total": 6,
+          "i": 4
+        }
+      },
+      {
+        "event": "line",
+        "line": 3,
+        "variables": {
+          "n": 5,
+          "total": 10,
+          "i": 4
+        }
+      },
+      {
+        "event": "line",
+        "line": 5,
+        "variables": {
+          "n": 5,
+          "total": 10,
+          "i": 4
+        }
+      },
+      {
+        "event": "return",
+        "line": 5,
+        "variables": {
+          "n": 5,
+          "total": 10,
+          "i": 4
+        },
+        "value": 10
+      }
+    ],
+    "result": 10
+  },
+  "fixed": {
+    "source": "def sum_to(n):\n    total = 0\n    for i in range(1, n + 1):\n        total = total + i\n    return total",
+    "steps": [
+      {
+        "event": "line",
+        "line": 2,
+        "variables": {
+          "n": 5
+        }
+      },
+      {
+        "event": "line",
+        "line": 3,
+        "variables": {
+          "n": 5,
+          "total": 0
+        }
+      },
+      {
+        "event": "line",
+        "line": 4,
+        "variables": {
+          "n": 5,
+          "total": 0,
+          "i": 1
+        }
+      },
+      {
+        "event": "line",
+        "line": 3,
+        "variables": {
+          "n": 5,
+          "total": 1,
+          "i": 1
+        }
+      },
+      {
+        "event": "line",
+        "line": 4,
+        "variables": {
+          "n": 5,
+          "total": 1,
+          "i": 2
+        }
+      },
+      {
+        "event": "line",
+        "line": 3,
+        "variables": {
+          "n": 5,
+          "total": 3,
+          "i": 2
+        }
+      },
+      {
+        "event": "line",
+        "line": 4,
+        "variables": {
+          "n": 5,
+          "total": 3,
+          "i": 3
+        }
+      },
+      {
+        "event": "line",
+        "line": 3,
+        "variables": {
+          "n": 5,
+          "total": 6,
+          "i": 3
+        }
+      },
+      {
+        "event": "line",
+        "line": 4,
+        "variables": {
+          "n": 5,
+          "total": 6,
+          "i": 4
+        }
+      },
+      {
+        "event": "line",
+        "line": 3,
+        "variables": {
+          "n": 5,
+          "total": 10,
+          "i": 4
+        }
+      },
+      {
+        "event": "line",
+        "line": 4,
+        "variables": {
+          "n": 5,
+          "total": 10,
+          "i": 5
+        }
+      },
+      {
+        "event": "line",
+        "line": 3,
+        "variables": {
+          "n": 5,
+          "total": 15,
+          "i": 5
+        }
+      },
+      {
+        "event": "line",
+        "line": 5,
+        "variables": {
+          "n": 5,
+          "total": 15,
+          "i": 5
+        }
+      },
+      {
+        "event": "return",
+        "line": 5,
+        "variables": {
+          "n": 5,
+          "total": 15,
+          "i": 5
+        },
+        "value": 15
+      }
+    ],
+    "result": 15
+  }
+}

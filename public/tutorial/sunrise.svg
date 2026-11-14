@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="600" viewBox="0 0 1200 600">
+<defs>
+<linearGradient id="sky" x2="0" y2="1"><stop stop-color="#193452"/><stop offset=".58" stop-color="#7999a4"/><stop offset="1" stop-color="#e9c9a1"/></linearGradient>
+<linearGradient id="lake" x2="0" y2="1"><stop stop-color="#638e99"/><stop offset="1" stop-color="#172f43"/></linearGradient>
+<linearGradient id="mountain" x2="0" y2="1"><stop stop-color="#507e8a"/><stop offset="1" stop-color="#284d61"/></linearGradient>
+<radialGradient id="glow"><stop stop-color="#ffe8b2" stop-opacity=".55"/><stop offset="1" stop-color="#ffd997" stop-opacity="0"/></radialGradient>
+</defs>
+<path fill="url(#sky)" d="M0 0h1200v600H0z"/>
+<circle cx="826" cy="225" r="175" fill="url(#glow)"/>
+<circle cx="826" cy="225" r="46" fill="#fce2ac"/>
+<path d="M0 344 130 230 230 283 378 126 556 309 645 213 785 345 960 185 1200 342V600H0" fill="#74939b"/>
+<path d="m291 220 87-94 91 94-69-34-25 16-27-12Z" fill="#d8ddd0" opacity=".72"/>
+<path d="M0 399 190 278 340 381 521 214 689 364 805 298 936 374 1103 265 1200 319V600H0" fill="url(#mountain)"/>
+<path d="M0 420Q290 391 550 421T1200 415V600H0Z" fill="url(#lake)"/>
+<path d="M718 452h198m-249 25h310m-285 28h248m-193 29h142" stroke="#c9d3bf" stroke-width="2" opacity=".35" stroke-linecap="round"/>
+<path d="M0 405Q103 415 250 525L348 600H0ZM1200 389q-126 74-220 211h220Z" fill="#193749"/>
+<g fill="#102c3c"><path d="M68 490h60l-30-100zm5-28h50l-25-93zm10-34h30l-15-71z"/><path d="M160 546h76l-38-130zm9-44h58l-29-108zm10-41h38l-19-88z"/><path d="M1108 489h66l-33-115zm9-36h48l-24-99zm10-34h28l-14-78z"/></g>
+<path d="m590 180 9-4 9 4m27-20 9-4 9 4" fill="none" stroke="#344e63" stroke-width="2" stroke-linecap="round"/>
+</svg>
